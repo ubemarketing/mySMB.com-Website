@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#34dfba">
+  <meta name="description" content="mySMB.com is an AI-powered business platform that brings practical AI, everyday work, learning and community together for Australian SMBs.">
+  <link rel="canonical" href="https://mysmb.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="mySMB.com">
+  <meta property="og:title" content="mySMB.com | AI-Powered Business Platform">
+  <meta property="og:description" content="mySMB.com is an AI-powered business platform that brings practical AI, everyday work, learning and community together for Australian SMBs.">
+  <meta property="og:url" content="https://mysmb.com/">
+  <meta property="og:image" content="https://mysmb.com/assets/logo-dark.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="mySMB.com | AI-Powered Business Platform">
+  <meta name="twitter:description" content="mySMB.com is an AI-powered business platform that brings practical AI, everyday work, learning and community together for Australian SMBs.">
+  <meta name="twitter:image" content="https://mysmb.com/assets/logo-dark.png">
+  <title>mySMB.com | AI-Powered Business Platform</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* --- Homepage fixes: styles.css can't be republished, so overrides live here --- */
+    h1,h2,h3{line-height:1.12}
+    .offerings-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
+    .offerings-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -2px;scrollbar-width:none}
+    .offerings-grid::-webkit-scrollbar{display:none}
+    .offering-card{flex:0 0 auto;width:min(280px,78vw);scroll-snap-align:start;display:flex;flex-direction:column;padding:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+    a.offering-card:hover,a.offering-card:focus-visible{transform:translateY(-4px);box-shadow:0 16px 34px rgba(20,30,40,.12);border-color:transparent}
+    .offering-card .offering-shot{aspect-ratio:4/3;background:var(--paper);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .offering-card .offering-shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .offering-card .offering-shot.contain{padding:26px}
+    .offering-card .offering-shot.contain img{width:100%;height:100%;object-fit:contain}
+    .offering-card .offering-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .offering-card h3{margin:0;font-size:1.28rem}
+    .offering-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.4}
+    .offering-card .card-link{margin-top:auto;padding-top:10px;font-weight:700;font-size:.86rem}
+    .offering-card:hover .card-link{color:var(--green-text)}
+    .offering-shot.more-shot{position:relative;background:var(--gradient-header-blue);padding:0}
+    .more-scroll{position:absolute;inset:0;overflow:hidden;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+    .more-scroll-inner{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:14px;animation:more-scroll-y 12s linear infinite}
+    .more-scroll-inner span{padding:8px 0;color:rgba(255,255,255,.9);font-weight:800;font-size:1.05rem;text-align:center}
+    @keyframes more-scroll-y{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+    @media(prefers-reduced-motion:reduce){.more-scroll-inner{animation:none}}
+    .community-features-wrap{margin-top:70px}
+    .community-features-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:20px}
+    .community-features-head h3{font-size:1.5rem;margin:0}
+    .cf-nav{display:flex;gap:10px;flex:0 0 auto}
+    .cf-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s}
+    .cf-nav button:hover{background:var(--paper);border-color:var(--ink)}
+    .cf-nav button:disabled{opacity:.35;cursor:default;pointer-events:none}
+    .cf-nav button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .community-features{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;margin:0 -2px;scrollbar-width:none}
+    .community-features::-webkit-scrollbar{display:none}
+    .community-features>div{flex:0 0 auto;width:min(420px,82vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .18s,box-shadow .18s;padding:30px 26px;display:flex;flex-direction:column}
+    .community-features>div:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,30,40,.1)}
+    .community-features .cf-cta-card{background:var(--gradient-header-green);align-items:center;justify-content:center;text-align:center;padding:36px 30px}
+    .community-features .cf-cta-card b{font-size:1.3rem;margin-bottom:10px;color:var(--ink);background:none;-webkit-text-fill-color:currentColor}
+    .community-features .cf-cta-card p{color:var(--ink);opacity:.8;margin:0 0 22px;font-size:.96rem;max-width:280px}
+    .community-features b{display:block;font-size:1.9rem;font-weight:900;margin-bottom:12px;line-height:1.15;letter-spacing:-.01em;background:var(--gradient-header-blue);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+    .community-features .cf-cat{display:block;font-size:.8rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--green-text);margin-bottom:10px}
+    .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .course-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+    .course-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(20,30,40,.08);border-color:transparent}
+    .course-card .c-logo{width:40px;height:40px;border-radius:11px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:7px}
+    .course-card .c-logo img{width:100%;height:100%;object-fit:contain}
+    .course-card .c-cat{font-size:.8rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--green-text)}
+    .course-card .c-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.35}
+    .course-card-cta{align-items:center;justify-content:center;text-align:center;border-style:solid;border-width:1.5px;border-color:var(--green);background:rgba(52,223,186,.1)}
+    .course-card-cta:hover{background:rgba(52,223,186,.18)}
+    .course-card-cta .c-title{color:var(--green-text)}
+    @media(max-width:1050px){.course-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){
+      .course-grid{grid-template-columns:1fr}
+      .course-grid .course-card:nth-of-type(n+5):not(.course-card-cta){display:none}
+    }
+    .community-features p{font-size:.94rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
+    .community-features p:last-child{margin-bottom:0}
+    @media(max-width:480px){.community-features b{font-size:1.6rem}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+    .reveal-stagger.visible>*{opacity:1;transform:none}
+    .reveal-stagger.visible>*:nth-child(1){transition-delay:0s}.reveal-stagger.visible>*:nth-child(2){transition-delay:.08s}.reveal-stagger.visible>*:nth-child(3){transition-delay:.16s}.reveal-stagger.visible>*:nth-child(4){transition-delay:.24s}.reveal-stagger.visible>*:nth-child(5){transition-delay:.32s}.reveal-stagger.visible>*:nth-child(6){transition-delay:.4s}
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-stagger>*{opacity:1;transform:none;transition:none}}
+    .menu-button-icon{display:none}
+    @media(max-width:720px){
+      .hero-copy .label{margin-bottom:16px}
+      /* One seamless gradient behind logo + hero on mobile: hide the audience-nav
+         pill row so the header's gradient runs straight into the hero's, and
+         swap to a real hamburger icon so it stays legible on the gradient. */
+      .audience-nav{display:none}
+      .site-header{padding-top:calc(18px + env(safe-area-inset-top,0px));padding-bottom:14px;min-height:0}
+      .site-header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.18)}
+      .menu-button{color:#fff}
+      .menu-button-text{display:none}
+      .menu-button-icon{display:block;width:28px;height:28px}
+      .header-actions .button-dark{background:#fff;color:var(--ink)}
+      /* Mobile-only hero reorganisation, based on a reference mockup: left-aligned
+         heading/copy (not centred), a small eyebrow badge above the H1, a full-width
+         CTA pill, and the "Built for" row turned into a 2x2 card grid. Desktop is
+         untouched, hero-badge only shows below this breakpoint. */
+      .hero-copy{text-align:left}
+      .hero-badge{display:inline-block;margin-bottom:10px}
+      .hero h1{font-size:clamp(2.4rem,9vw,3.2rem);text-align:left;margin-bottom:16px}
+      .no-split{white-space:nowrap}
+      .hero-tagline{margin-bottom:8px}
+      .hero-tagline,.hero-lede{text-align:left}
+      .hero-lede{margin-top:6px}
+      .hero-actions{align-items:stretch;margin-top:36px;gap:56px}
+      .hero-actions .button{width:100%;justify-content:center;min-height:56px;font-size:1.05rem}
+      .hero-actions .text-link{justify-content:center;text-decoration:underline;text-underline-offset:4px}
+      .hero-audiences{justify-content:flex-start;font-size:.74rem;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;-ms-overflow-style:none;scrollbar-width:none;margin-top:14px}
+      .hero-principles{margin-top:22px}
+      .hero-audiences::-webkit-scrollbar{display:none}
+      .hero-audiences span:not(.hero-audiences-label):not(:last-child)::after{margin:0 8px}
+      .section-header{text-align:center;margin-inline:auto}
+      .section-header p{margin-inline:auto}
+      .offerings-grid{gap:14px}
+      .offering-card{width:min(240px,72vw)}
+      .offering-card .offering-body{padding:16px 16px 18px}
+      .cf-nav{display:none}
+      .academy-courses div{padding-bottom:14px;gap:14px}
+      .why-copy p{margin-bottom:16px}
+      .section-header{margin-bottom:40px}
+      .pricing-card{padding:30px 26px}
+      .pricing-grid{background:transparent;border:0;gap:16px}
+      .pricing-card{border:1px solid var(--line)}
+      .video-section{padding-block:60px}
+      /* Swipeable tiles instead of one full-width tile stacked per row, using the
+         same lighter tile treatment that was on the "Built for" cards */
+      .hero-principles{display:flex;grid-template-columns:unset;overflow-x:auto;scroll-snap-type:x proximity;gap:14px;padding-bottom:4px;margin-inline:-22px;padding-inline:22px}
+      .hero-principles>div{flex:0 0 auto;width:min(240px,78vw);scroll-snap-align:start;background:rgba(255,255,255,.06);backdrop-filter:none;-webkit-backdrop-filter:none;border:1px solid rgba(255,255,255,.16);border-radius:14px}
+    }
+    @media(max-width:480px){
+      .hero h1 br.lb{display:none}
+      .hero-audiences{font-size:.8rem}
+      .pricing-card .price{font-size:2.5rem}
+      .no-split{white-space:normal}
+    }
+    /* --- Recycled from the Jack portfolio build: logo marquee + magnetic CTAs --- */
+    .logo-marquee{padding-block:34px;border-bottom:1px solid var(--line)}
+    .logo-marquee-label{margin:0 0 18px;color:var(--muted);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .logo-marquee-track{width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+    .logo-marquee-row{display:flex;align-items:center;gap:56px;width:max-content;animation:logo-scroll 38s linear infinite}
+    .logo-marquee-track:hover .logo-marquee-row{animation-play-state:paused}
+    .logo-marquee-row img{height:28px;width:auto;max-width:120px;object-fit:contain;opacity:.85;transition:opacity .2s}
+    .logo-marquee-row img:hover{opacity:1}
+    .logo-marquee-row img.lg{height:44px;max-width:150px}
+    @keyframes logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){.logo-marquee-row{animation:none}}
+    .magnet-btn{will-change:transform}
+    /* --- Vary the repeated eyebrow-label formula so not every section shouts the same way --- */
+    .hero-badge{display:none;margin-bottom:18px;padding:6px 16px;border:1px solid rgba(52,223,186,.55);border-radius:var(--radius-pill);background:rgba(52,223,186,.1);color:var(--green);font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .site-nav-cta{display:none}
+    /* Below 1050px the hamburger takes over the whole nav, so fold Get Started
+       into the bottom of that dropdown instead of also floating a separate
+       button in the header bar next to the hamburger. */
+    @media(max-width:1050px){
+      .header-actions{display:none}
+      .site-nav-cta{display:flex;justify-content:center;align-items:center;margin-top:14px;padding:13px 18px;width:100%;background:#fff;border:1px solid var(--line);color:var(--ink)!important;font-weight:800!important;text-decoration:none;border-radius:var(--radius-pill);text-align:center}
+    }
+    .label-quiet{margin-bottom:14px;font-size:.92rem;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--muted)}
+    .label-product{display:inline-block;margin-bottom:18px;padding:5px 14px;border:1px solid var(--line);border-radius:var(--radius-pill);font-size:.8rem;font-weight:700;letter-spacing:.02em;text-transform:none;color:var(--ink)}
+    /* --- Coexist-with tools grid --- */
+    .coexist-section{padding-block:90px;border-top:1px solid var(--line)}
+    .coexist-section .section-header{max-width:640px}
+    .coexist-section .section-header p:not(.label-quiet){color:var(--muted);font-size:1.02rem;margin-top:10px}
+    .coexist-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:16px;margin-top:20px}
+    .coexist-grid>div{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:22px 8px;background:transparent;border:1px solid var(--line);border-radius:var(--radius-sm);transition:transform .18s,box-shadow .18s,border-color .18s,background .18s}
+    .coexist-grid>div:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(20,30,40,.08);border-color:transparent;background:var(--paper)}
+    .cx-badge{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);padding:11px}
+    .cx-badge img{width:100%;height:100%;object-fit:contain}
+    .cx-badge.plus{color:#fff;font-weight:800;font-size:1.05rem;background:var(--gradient-header-blue);border:0}
+    .coexist-grid span{font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.25}
+    .coexist-grid .cx-more{border-style:solid;border-width:1.5px;border-color:var(--green);background:rgba(52,223,186,.1)}
+    .coexist-grid .cx-more:hover{background:rgba(52,223,186,.18)}
+    .coexist-grid .cx-more .cx-badge{background:var(--ink);color:#fff;font-size:1.7rem;border:0}
+    .coexist-grid .cx-more span{color:var(--green-text);font-weight:800}
+    @media(max-width:1050px){.coexist-grid{grid-template-columns:repeat(5,1fr)}}
+    @media(max-width:720px){
+      .coexist-grid{grid-template-columns:repeat(4,1fr);gap:10px}
+      .coexist-grid>div{padding:14px 4px;gap:8px}
+      .cx-badge{width:40px;height:40px;border-radius:12px;padding:8px}
+      .cx-badge.plus{font-size:.85rem}
+      .coexist-grid span{font-size:.7rem}
+    }
+    @media(max-width:420px){.coexist-grid{grid-template-columns:repeat(3,1fr)}}
+    /* --- Heading entrance: words rise into place, masked, staggered --- */
+    .wr-word{display:inline-block;overflow:hidden;vertical-align:top}
+    .wr-inner{display:inline-block;opacity:0;transform:translateY(115%);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+    .word-reveal.in .wr-inner{opacity:1;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){.wr-inner{opacity:1!important;transform:none!important;transition:none!important}}
+    /* --- Marketplace: many small listing chips instead of one screenshot --- */
+    .offering-shot.tiles{aspect-ratio:4/3;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:14px;background:var(--paper)}
+    .offering-shot.tiles span{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 10px;background:#fff;border:1px solid var(--line);border-radius:7px;font-size:.66rem;font-weight:600;color:var(--ink);white-space:nowrap}
+    .offering-shot.tiles span b{font-size:.64rem;font-weight:800;color:var(--green-text)}
+    /* --- Legal: a word cloud of real service and package names --- */
+    .offering-shot.cloud{aspect-ratio:4/3;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px 12px;padding:18px;background:var(--paper);text-align:center}
+    .offering-shot.cloud span{color:var(--ink);line-height:1}
+    /* --- Community: floating member message bubbles for a livelier feel --- */
+    .community-media{position:relative}
+    .community-media>img{width:100%;max-width:none;max-height:none;object-fit:contain;border-radius:var(--radius)}
+    @media(max-width:1050px){.community-media{max-width:850px}}
+    @media(max-width:720px){.community-media{margin-inline:-22px;width:calc(100% + 44px);max-width:none}}
+    .community-bubbles{position:absolute;inset:0;pointer-events:none;z-index:2}
+    .cb{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:9px 16px 9px 9px;box-shadow:0 12px 30px rgba(10,35,30,.22);max-width:210px;animation:cb-float 5s ease-in-out infinite}
+    .cb-avatar{position:relative;flex:0 0 auto}
+    .cb-avatar img{display:block;width:46px;height:46px;border-radius:50%;object-fit:cover;border:2.5px solid var(--green)}
+    .cb-arrow{position:absolute;bottom:-4px;left:-4px;width:20px;height:20px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+    .cb-arrow svg{width:10px;height:10px;stroke:var(--ink);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .cb b{display:block;font-size:.82rem;color:var(--ink);margin-bottom:1px}
+    .cb p{margin:0;font-size:.74rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
+    .cb-big{max-width:250px;padding:12px 20px 12px 12px}
+    .cb-big .cb-avatar img{width:64px;height:64px;border-width:3px}
+    .cb-big .cb-arrow{width:24px;height:24px}
+    .cb-big .cb-arrow svg{width:12px;height:12px}
+    .cb-big b{font-size:.96rem}
+    .cb-big p{font-size:.82rem;max-width:150px}
+    .cb1{top:1%;left:5%;animation-delay:0s}
+    .cb2{top:9%;right:3%;animation-delay:1.1s}
+    .cb3{top:41%;left:0%;animation-delay:.5s}
+    .cb6{top:50%;right:1%;animation-delay:1.7s}
+    .cb8{bottom:2%;left:11%;animation-delay:.8s}
+    .cb10{bottom:11%;right:9%;animation-delay:2.2s}
+    @keyframes cb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @media(prefers-reduced-motion:reduce){.cb{animation:none}}
+    @media(max-width:1050px){
+      .cb{padding:7px 14px 7px 7px;max-width:172px;border-radius:12px;box-shadow:0 10px 22px rgba(10,35,30,.2)}
+      .cb-avatar img{width:36px;height:36px;border-width:2px}
+      .cb-arrow{width:16px;height:16px}
+      .cb-arrow svg{width:9px;height:9px}
+      .cb b{font-size:.72rem}
+      .cb p{font-size:.64rem;max-width:100px}
+      .cb-big{max-width:196px;padding:9px 16px 9px 9px}
+      .cb-big .cb-avatar img{width:48px;height:48px;border-width:2.5px}
+      .cb-big .cb-arrow{width:19px;height:19px}
+      .cb-big b{font-size:.84rem}
+      .cb-big p{font-size:.72rem;max-width:115px}
+    }
+    @media(max-width:480px){
+      .cb2,.cb10{display:none}
+      .cb{max-width:132px;padding:6px 11px 6px 6px;gap:8px}
+      .cb-avatar img{width:28px;height:28px;border-width:1.5px}
+      .cb-arrow{width:13px;height:13px}
+      .cb-arrow svg{width:7px;height:7px}
+      .cb b{font-size:.64rem}
+      .cb p{font-size:.58rem;max-width:78px}
+      .cb-big{max-width:150px;padding:7px 13px 7px 7px}
+      .cb-big .cb-avatar img{width:38px;height:38px;border-width:2px}
+      .cb-big b{font-size:.72rem}
+      .cb-big p{font-size:.62rem;max-width:88px}
+    }
+  </style>
+  <noscript><style>.reveal,.reveal-stagger>*,.wr-inner{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body data-cms-page="page-index">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="audience-nav" aria-label="Business type">
+    <div class="audience-nav-inner">
+      <a href="audience-sole-operators.html">Sole traders</a>
+      <a href="audience-small-business.html">Small businesses</a>
+      <a href="audience-medium-large-business.html">Medium and large businesses</a>
+      <a href="audience-accountants-bookkeepers.html">Accountants and bookkeepers</a>
+      <a href="audience-chambers-associations.html">Chambers &amp; Associations</a>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Others</button>
+        <div class="dropdown-menu">
+          <a href="industries.html#accounting">Accounting</a>
+          <a href="industries.html#legal">Legal</a>
+          <a href="industries.html#healthcare">Healthcare</a>
+          <a href="industries.html#allied-health">Allied Health</a>
+          <a href="industries.html#natural-health">Natural Health</a>
+          <a href="industries.html#mortgage-broking">Mortgage Broking</a>
+          <a href="industries.html#financial-advice">Financial Advice</a>
+          <a href="industries.html#real-estate">Real Estate</a>
+          <a href="industries.html#construction">Construction</a>
+          <a href="industries.html#insurance-broking">Insurance Broking</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="mySMB.com home"><img src="assets/logo-light.png" alt="mySMB.com"></a>
+    <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false"><span class="menu-button-text">Menu</span><svg class="menu-button-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Features</button>
+        <div class="dropdown-menu">
+          <div class="has-submenu">
+            <a href="solutions-workspace.html">Workspace</a>
+            <div class="submenu">
+              <div class="submenu-item" tabindex="0"><span>myHub</span><p>Bring your inbox, tasks, schedule and business activity into one clear daily view.</p></div>
+              <div class="submenu-item" tabindex="0"><span>WorkQ</span><p>Turn workflows and actions into a queue you can work through with clarity.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Digital Twin</span><p>Enable AI to understand your context and work on your behalf.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Work Management</span><p>Plan, assign, and track work across individuals and teams.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Automations</span><p>Automate repetitive tasks and streamline business processes.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Templates</span><p>Standardise work with reusable document and workflow templates.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Support and Guidance</span><p>In-app assistance helps you get to productive results without a steep learning curve.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Integrations</span><p>Connect tools like Microsoft 365, MYOB and Xero to bring live data into your Workspace.</p></div>
+              <div class="submenu-item" tabindex="0"><span>CRM &amp; Opportunity Management</span><p>Manage relationships, opportunities, and business activities from a single platform.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Marketing &amp; Lead Capture</span><p>Capture leads, collect feedback, and grow engagement through forms and surveys.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Programs</span><p>Organise projects and initiatives under strategic programs.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Knowledge Base</span><p>Store, organise, and share information across your organisation.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Custom Records</span><p>Create and manage records tailored to your unique business processes.</p></div>
+              <div class="submenu-item" tabindex="0"><span>AI Agents</span><p>Delegate work to AI-powered agents that help get tasks done faster.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Microsoft Teams Integration</span><p>Connect conversations and collaboration directly with Microsoft Teams.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Collaboration Tools</span><p>Enable teams to communicate, coordinate, and work together more effectively.</p></div>
+            </div>
+          </div>
+          <div class="has-submenu">
+            <a href="solutions-community.html">Community</a>
+            <div class="submenu">
+              <div class="submenu-item" tabindex="0"><span>Always-On Support</span><p>Get ongoing access to expert guidance, answers, and practical support whenever you need it.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Community</span><p>Connect with like-minded business owners to share experiences, ask questions, and learn from real-world challenges.</p></div>
+              <div class="submenu-item" tabindex="0"><span>SMB Pulse</span><p>Stay informed with curated updates on AI, technology, business trends, and emerging opportunities.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Webinars &amp; Events</span><p>Join live and on-demand sessions to learn from experts and connect with peers.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Learning Resources</span><p>Access practical courses, playbooks, guides, and prompt libraries designed for immediate application.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Knowledge Hub</span><p>Explore a growing library of business insights, resources, and best practices.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Collaboration Network</span><p>Build valuable relationships and collaborate with business owners, partners, and industry experts.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Expert Insights</span><p>Learn from subject matter experts through curated content, discussions, and educational sessions.</p></div>
+              <div class="submenu-item" tabindex="0"><span>AI Learning</span><p>Develop AI knowledge and practical skills through real-world examples, training, and use cases.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Business Growth Resources</span><p>Discover tools, strategies, and frameworks designed to help your business grow and operate more effectively.</p></div>
+            </div>
+          </div>
+          <a href="solutions-academy.html">Academy</a>
+          <a href="solutions-marketplace.html">Marketplace</a>
+          <a href="solutions-legal.html">Legal</a>
+        </div>
+      </div>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Your Business</button>
+        <div class="dropdown-menu">
+          <div class="has-submenu">
+            <a href="audience-sole-operators.html">Sole traders</a>
+            <div class="submenu">
+              <a class="submenu-item" href="audience-sole-operators.html#tradies"><span>Tradies</span><p>Manage jobs, customers and paperwork from one place.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#professional-services"><span>Professional Services</span><p>Keep client work, documents and compliance organised.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#consultants"><span>Consultants</span><p>Stay on top of projects, deliverables and client relationships.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#freelancers"><span>Freelancers</span><p>Turn scattered client work into a repeatable workflow.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#accountants-bookkeepers-sole"><span>Accountants &amp; Bookkeepers</span><p>Manage client requests, deadlines and recurring work.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#health-wellness"><span>Health &amp; Wellness</span><p>Organise appointments, client notes and follow-ups.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#independent-educators"><span>Independent Educators</span><p>Track students, sessions and learning resources.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#creative-digital"><span>Creative &amp; Digital</span><p>Keep projects, deadlines and client feedback organised.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#property-real-estate"><span>Property &amp; Real Estate</span><p>Manage listings, inspections and client communications.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#coaches-mentors"><span>Coaches &amp; Mentors</span><p>Structure programs, clients and outcomes.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#recruitment-hr"><span>Recruitment &amp; HR</span><p>Coordinate candidates, clients and hiring activities.</p></a>
+              <a class="submenu-item" href="https://myimpact.org/" target="_blank" rel="noopener"><span>Not-for-Profits</span><p>Coordinate programs, volunteers and community engagement.</p></a>
+            </div>
+          </div>
+          <a href="audience-small-business.html">Small businesses</a>
+          <a href="audience-medium-large-business.html">Medium and large businesses</a>
+          <a href="audience-accountants-bookkeepers.html">Accountants and bookkeepers</a>
+          <a href="audience-chambers-associations.html">Chambers &amp; Associations</a>
+          <div class="has-submenu">
+            <a href="industries.html">Others</a>
+            <div class="submenu">
+              <a class="submenu-item" href="industries.html#accounting"><span>Accounting</span><p>Manage client work, compliance deadlines and advisory services from one connected Workspace.</p></a>
+              <a class="submenu-item" href="industries.html#legal"><span>Legal</span><p>Keep matters, documents and client communication organised, with mySMB Legal support on hand.</p></a>
+              <a class="submenu-item" href="industries.html#healthcare"><span>Healthcare</span><p>Reduce admin around scheduling, records and compliance, so more time goes to patient care.</p></a>
+              <a class="submenu-item" href="industries.html#allied-health"><span>Allied Health</span><p>Bring client bookings, treatment notes and follow-ups together for solo and growing practices.</p></a>
+              <a class="submenu-item" href="industries.html#natural-health"><span>Natural Health</span><p>Practical tools for client management, education and community, built for natural health practices.</p></a>
+              <a class="submenu-item" href="industries.html#mortgage-broking"><span>Mortgage Broking</span><p>Track leads, applications and lender communication in one place, with AI keeping clients moving.</p></a>
+              <a class="submenu-item" href="industries.html#financial-advice"><span>Financial Advice</span><p>Manage client relationships and compliance-heavy workflows with a Workspace built to reduce admin.</p></a>
+              <a class="submenu-item" href="industries.html#real-estate"><span>Real Estate</span><p>Coordinate listings, client communication and transactions with a shared view of what's next.</p></a>
+              <a class="submenu-item" href="industries.html#construction"><span>Construction</span><p>Connect projects, subcontractors and clients, turning site communication into trackable work.</p></a>
+              <a class="submenu-item" href="industries.html#insurance-broking"><span>Insurance Broking</span><p>Manage client policies, renewals and claims support from one Workspace, backed by peers.</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">About Us</button>
+        <div class="dropdown-menu">
+          <a href="about-us.html">Who we are</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="partners.html">Partners</a>
+          <a href="blogs-news.html">Blogs &amp; News</a>
+          <a href="events-webinars.html">Events &amp; Webinars</a>
+        </div>
+      </div>
+      <a href="index.html#pricing">Pricing</a><a href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener">Sign In</a>
+      <a class="site-nav-cta" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener">Get started</a>
+    </nav>
+    <div class="header-actions"><a class="button button-dark button-small" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener">Get started</a></div>
+  </header>
+
+  <main id="main">
+    <section class="hero page-width" id="top">
+      <div class="hero-copy">
+        <p class="hero-badge" data-cms-text="content1">AI-powered business platform</p>
+        <h1><span data-cms-text="content2">mySMB.com is your</span> <span class="no-split" data-cms-text="content3">AI-powered</span> <span class="no-split" data-cms-text="content4">business platform.</span></h1>
+        <p class="hero-tagline"><span class="highlight" data-cms-text="content5">The silver bullet for productivity.</span></p>
+        <p class="hero-lede" data-cms-text="content6">Purpose-built for SMBs. Designed to coexist with your existing systems.</p>
+        <div class="hero-actions"><a class="button button-green magnet-btn" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener" data-cms-link="content20" data-cms-text="content7">Start your 4-week trial</a><a class="text-link" href="#workspace" data-cms-link="content21"><span data-cms-text="content8">Explore Workspace</span> <span data-cms-text="content9">→</span></a></div>
+        <div class="hero-audiences" aria-label="Built for"><span class="hero-audiences-label" data-cms-text="content10">Built for</span><span data-cms-text="content11">Sole traders</span><span data-cms-text="content12">Growing teams</span><span data-cms-text="content13">Associations &amp; chambers</span></div>
+      </div>
+      <div class="hero-principles" aria-label="How mySMB.com helps">
+        <div><b data-cms-text="content14">Engage</b><p data-cms-text="content15">Bring your work and information together.</p></div>
+        <div><b data-cms-text="content16">Learn</b><p data-cms-text="content17">Build useful skills with practical support.</p></div>
+        <div><b data-cms-text="content18">Apply AI</b><p data-cms-text="content19">Use AI where it can support real work.</p></div>
+      </div>
+    </section>
+
+    <section class="video-section page-width">
+      <div class="video-embed">
+        <img id="heroVideo" class="video-poster" src="assets/video/mysmb-video-poster.png" alt="mySMB.com overview video" data-youtube-id="y8rWafQw3eA" loading="lazy">
+        <button class="video-play-btn" type="button" aria-label="Play video">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="logo-marquee reveal" aria-label="Partners and organisations working with mySMB.com">
+      <p class="page-width logo-marquee-label" data-cms-text="content22">Working alongside</p>
+      <div class="logo-marquee-track">
+        <div class="logo-marquee-row" id="logoRow"></div>
+      </div>
+    </section>
+
+    <section class="product-lead page-width" id="workspace">
+      <div class="product-window reveal">
+        <div class="window-label"><span data-cms-text="content23">Workspace</span><span data-cms-text="content24">Real product view</span></div>
+        <img src="assets/workspace-detail.png" alt="mySMB.com Workspace dashboard showing tasks, records and business activity" data-cms-image="content30">
+      </div>
+      <div class="product-lead-copy">
+        <p class="label" data-cms-text="content25">One connected business</p>
+        <h2 data-cms-text="content26">Start the day knowing what needs attention.</h2>
+        <p data-cms-text="content27">Workspace brings together your priorities, schedule, work queues and useful business information. See what is waiting, understand the next action and move directly into the work.</p>
+        <a class="text-link" href="#platform" data-cms-link="content31"><span data-cms-text="content28">Explore Workspace</span> <span data-cms-text="content29">→</span></a>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="page-width why-grid">
+        <p class="label-quiet" data-cms-text="content32">The cost of scattered tools</p>
+        <h2 data-cms-text="content33">Stop being the one joining every dot.</h2>
+        <div class="why-copy"><p data-cms-text="content34">When emails, tasks, processes and customer information sit in different places, the owner often becomes the system holding it all together.</p><p><strong data-cms-text="content35">mySMB.com provides one place for the work, with practical AI, learning and community available around it.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="coexist-section">
+      <div class="page-width">
+        <header class="section-header compact reveal"><p class="label-quiet" data-cms-text="content36">No rip and replace</p><h2 data-cms-text="content37">Built to coexist with what you already use.</h2><p data-cms-text="content38">mySMB.com works alongside the tools already running your business, not instead of them.</p></header>
+        <div class="coexist-grid reveal-stagger" id="coexistRow"></div>
+      </div>
+    </section>
+
+    <section class="platform page-width" id="platform">
+      <header class="section-header reveal"><p class="label-product" data-cms-text="content39">Workspace</p><h2><span data-cms-text="content40">Use what helps.</span><br> <span data-cms-text="content41">Add more later.</span></h2></header>
+      <div class="capability-list reveal-stagger">
+        <article><span data-cms-text="content42">01</span><h3 data-cms-text="content43">See the work</h3><p data-cms-text="content44">Keep priorities, schedules, tasks and business activity visible in one place.</p></article>
+        <article><span data-cms-text="content45">02</span><h3 data-cms-text="content46">Move it forward</h3><p data-cms-text="content47">Turn useful information into clear actions and repeatable ways of working.</p></article>
+        <article><span data-cms-text="content48">03</span><h3 data-cms-text="content49">Build capability</h3><p data-cms-text="content50">Learn from practical resources, AI support and people with relevant experience.</p></article>
+      </div>
+      <img class="wide-product reveal" src="assets/workspace-overview.png" alt="Workspace and Community screens connected in mySMB.com" data-cms-image="content53">
+      <a class="text-link" style="margin-top:28px" href="solutions-workspace.html" data-cms-link="content54"><span data-cms-text="content51">Explore Workspace</span> <span data-cms-text="content52">→</span></a>
+    </section>
+
+    <section class="community-section" id="community">
+      <div class="page-width community-grid">
+        <div class="community-copy">
+          <p class="label-product" data-cms-text="content55">Community</p><h2 data-cms-text="content56">Your SMB Community for Practical Knowledge, Connection and Growth.</h2>
+          <p data-cms-text="content57">Join a community of Australian business owners, operators and experts sharing practical advice, real-world experiences and proven AI-powered business strategies.</p>
+          <a class="button button-white" href="https://myconnect.community/mysmb" target="_blank" rel="noopener" data-cms-link="content113" data-cms-text="content58">Join the community for free</a>
+        </div>
+        <div class="community-media">
+          <img src="assets/community.png" alt="mySMB.com Community feed, Daily Pulse and Playbooks" data-cms-image="content114">
+          <div class="community-bubbles" aria-hidden="true">
+            <div class="cb cb1" style="text-align:center"><div class="cb-avatar"><img src="assets/community/member-1.jpg" alt="" data-cms-image="content115"><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content59">Jack</b><p data-cms-text="content60">Just wrapped a great webinar</p></div></div>
+            <div class="cb cb2"><div class="cb-avatar"><img src="assets/community/member-2.jpg" alt="" data-cms-image="content116"><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content61">Charlotte</b><p data-cms-text="content62">Loving the new playbooks!</p></div></div>
+            <div class="cb cb6"><div class="cb-avatar"><img src="assets/community/member-6.jpg" alt="" data-cms-image="content117"><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content63">Mia</b><p data-cms-text="content64">This community is so helpful!</p></div></div>
+            <div class="cb cb8 cb-big"><div class="cb-avatar"><img src="assets/community/member-8.jpg" alt="" data-cms-image="content118"><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content65">John</b><p data-cms-text="content66">Welcome everyone, glad you're here!</p></div></div>
+            <div class="cb cb10"><div class="cb-avatar"><img src="assets/community/member-10.jpg" alt="" data-cms-image="content119"><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content67">Lucas</b><p data-cms-text="content68">Just posted a new template</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-width community-features-wrap">
+        <div class="community-features-head">
+          <h3 data-cms-text="content69">Explore what's inside</h3>
+          <div class="cf-nav">
+            <button type="button" class="cf-prev" aria-label="Scroll left"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button type="button" class="cf-next" aria-label="Scroll right"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="community-features reveal-stagger" id="cfTrack">
+          <div><span class="cf-cat" data-cms-text="content70">Ask the Community</span><b data-cms-text="content71">Not a feed you scroll past</b><p data-cms-text="content72">Post a question, share a win or see what other members are working through this week.</p><p data-cms-text="content73">Real answers from real business owners, not a script.</p></div>
+          <div><span class="cf-cat" data-cms-text="content74">SMB Pulse</span><b data-cms-text="content75">Nothing gets missed</b><p data-cms-text="content76">A short, daily brief keeps you current on what's happening in AI, business and your industry.</p><p data-cms-text="content77">Delivered straight to your feed each morning.</p></div>
+          <div><span class="cf-cat" data-cms-text="content78">Playbook</span><b data-cms-text="content79">Guidance you can act on today</b><p data-cms-text="content80">Follow clear, step-by-step guides built from real member experience.</p><p data-cms-text="content81">Work through them at your own pace, whenever it suits you.</p></div>
+          <div><span class="cf-cat" data-cms-text="content82">Webinars &amp; Events</span><b data-cms-text="content83">Join live or catch up later</b><p data-cms-text="content84">Ask questions in real time, or watch the recording whenever it suits you.</p><p data-cms-text="content85">A growing library of past sessions you can revisit anytime.</p></div>
+          <div><span class="cf-cat" data-cms-text="content86">Experts</span><b data-cms-text="content87">Learn from people who've done it</b><p data-cms-text="content88">Browse a directory of contributors across AI, Microsoft 365, marketing, legal and finance.</p><p data-cms-text="content89">Ask a question or book time directly, no cold calls.</p></div>
+          <div><span class="cf-cat" data-cms-text="content90">Always-On Support</span><b data-cms-text="content91">Get unstuck, day or night</b><p data-cms-text="content92">Search guides, browse quick answers or start a conversation to find what you need.</p><p data-cms-text="content93">Available around the clock, so a question never has to wait.</p></div>
+          <div><span class="cf-cat" data-cms-text="content94">Knowledge Hub</span><b data-cms-text="content95">A library built for SMBs</b><p data-cms-text="content96">Browse practical templates, guides and resources whenever you need them.</p><p data-cms-text="content97">Search by topic or explore curated collections.</p></div>
+          <div><span class="cf-cat" data-cms-text="content98">Collaboration Network</span><b data-cms-text="content99">Relationships, not just contacts</b><p data-cms-text="content100">Connect with business owners, partners and specialists who get what you're dealing with.</p><p data-cms-text="content101">Find trusted people for the jobs you can't do alone.</p></div>
+          <div><span class="cf-cat" data-cms-text="content102">AI Learning</span><b data-cms-text="content103">Real AI skills, not theory</b><p data-cms-text="content104">Work through practical examples, training and use cases at your own pace.</p><p data-cms-text="content105">Prompts and workflows you can put to work the same day.</p></div>
+          <div><span class="cf-cat" data-cms-text="content106">Business Growth Resources</span><b data-cms-text="content107">Practical tools to help you grow</b><p data-cms-text="content108">Explore tools, strategies and frameworks for pricing, planning and everyday operations.</p><p data-cms-text="content109">Built for every stage of growth, not just the big milestones.</p></div>
+          <div class="cf-cta-card"><b data-cms-text="content110">Ready to join in?</b><p data-cms-text="content111">Connect with Australian SMB owners, operators and specialists, free to join.</p><a class="button button-dark button-small" href="https://myconnect.community/mysmb" target="_blank" rel="noopener" data-cms-link="content120" data-cms-text="content112">Join the community for free</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn-section page-width" id="academy" style="display:block;padding-block:125px">
+      <div class="learn-copy" style="display:flex;align-items:flex-end;justify-content:space-between;gap:6vw;margin-bottom:44px;flex-wrap:wrap">
+        <div style="max-width:640px">
+          <p class="label-product" data-cms-text="content121">Academy</p><h2 data-cms-text="content122">Your AI journey, one course at a time.</h2>
+          <p data-cms-text="content123">Practical courses built for Australian SMBs, not enterprise teams. Start wherever you are and build the confidence to put AI to work in your day-to-day, improving how productively you and your team run the business.</p>
+        </div>
+        <div style="max-width:360px;flex:0 0 auto">
+          <ul class="check-list" style="margin-bottom:18px">
+            <li data-cms-text="content124">Built for SMBs, not enterprise teams</li>
+            <li data-cms-text="content125">Short lessons you can fit around real work</li>
+            <li data-cms-text="content126">Apply AI to real tasks, not just theory</li>
+            <li data-cms-text="content127">Official training from Microsoft, Google, OpenAI, Anthropic and more</li>
+          </ul>
+          <a class="text-link" href="solutions-academy.html" data-cms-link="content162"><span data-cms-text="content128">Explore Academy</span> <span data-cms-text="content129">→</span></a>
+        </div>
+      </div>
+      <div class="learn-image">
+        <div class="course-grid">
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content163"></div><span class="c-cat" data-cms-text="content130">Getting Started</span><span class="c-title" data-cms-text="content131">A Practical Guide to AI for SMBs</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content164"></div><span class="c-cat" data-cms-text="content132">Getting Started</span><span class="c-title" data-cms-text="content133">Introduction to AI Concepts</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content165"></div><span class="c-cat" data-cms-text="content134">Getting Started</span><span class="c-title" data-cms-text="content135">Introduction to Workspace</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content166"></div><span class="c-cat" data-cms-text="content136">Microsoft 365</span><span class="c-title" data-cms-text="content137">Introduction to Microsoft 365 Copilot</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/microsoft-glyph.png" alt="" data-cms-image="content167"></div><span class="c-cat" data-cms-text="content138">Microsoft 365</span><span class="c-title" data-cms-text="content139">What is Microsoft 365?</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/microsoft-teams.png" alt="" data-cms-image="content168"></div><span class="c-cat" data-cms-text="content140">Collaboration</span><span class="c-title" data-cms-text="content141">Copilot x Teams: Make Meetings More Productive</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content169"></div><span class="c-cat" data-cms-text="content142">Getting Started</span><span class="c-title" data-cms-text="content143">AI Tools You Can Use Today</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content170"></div><span class="c-cat" data-cms-text="content144">Collaboration</span><span class="c-title" data-cms-text="content145">Effective Team Collaboration with AI</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content171"></div><span class="c-cat" data-cms-text="content146">Security</span><span class="c-title" data-cms-text="content147">Simplified Cyber Security for Australian Small Business</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/google.png" alt="" data-cms-image="content172"></div><span class="c-cat" data-cms-text="content148">Google Skills</span><span class="c-title" data-cms-text="content149">Introduction to Generative AI</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/chatgpt.svg" alt="" data-cms-image="content173"></div><span class="c-cat" data-cms-text="content150">OpenAI</span><span class="c-title" data-cms-text="content151">OpenAI Academy</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/claude.png" alt="" data-cms-image="content174"></div><span class="c-cat" data-cms-text="content152">Anthropic</span><span class="c-title" data-cms-text="content153">Introduction to Claude</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/coexist/linkedin.png" alt="" data-cms-image="content175"></div><span class="c-cat" data-cms-text="content154">LinkedIn Learning</span><span class="c-title" data-cms-text="content155">Career Essentials in Generative AI</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content176"></div><span class="c-cat" data-cms-text="content156">Getting Started</span><span class="c-title" data-cms-text="content157">Introduction to Academy</span></div>
+          <div class="course-card"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content177"></div><span class="c-cat" data-cms-text="content158">AI Agents</span><span class="c-title" data-cms-text="content159">Get Started with Agents</span></div>
+          <a class="course-card course-card-cta" href="solutions-academy.html" data-cms-link="content178"><span class="c-title"><span data-cms-text="content160">Explore Academy</span> <span data-cms-text="content161">&rarr;</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offerings-section page-width">
+      <div class="offerings-head">
+        <header class="section-header compact reveal" style="margin-bottom:0"><p class="label" data-cms-text="content179">More ways to use mySMB.com</p><h2 data-cms-text="content180">Access what you need, when you need it.</h2></header>
+        <div class="cf-nav">
+          <button type="button" class="of-prev" aria-label="Scroll left"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" class="of-next" aria-label="Scroll right"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="offerings-grid reveal-stagger" id="offeringsTrack">
+        <a class="offering-card" href="solutions-workspace.html" data-cms-link="content226">
+          <div class="offering-shot"><img src="assets/screens/card-workspace.png" alt="mySMB.com Workspace showing myHub, tasks and recent activity" loading="lazy" data-cms-image="content227"></div>
+          <div class="offering-body"><h3 data-cms-text="content181">Workspace</h3><p data-cms-text="content182">Bring your tools, workflows and business information into one connected place.</p><span class="card-link" data-cms-text="content183">Explore Workspace →</span></div>
+        </a>
+        <a class="offering-card" href="solutions-community.html" data-cms-link="content228">
+          <div class="offering-shot"><img src="assets/screens/card-community.png" alt="myConnect community feed and demo library" loading="lazy" data-cms-image="content229"></div>
+          <div class="offering-body"><h3 data-cms-text="content184">Community</h3><p data-cms-text="content185">Connect, learn and discover trusted solutions alongside your everyday work.</p><span class="card-link" data-cms-text="content186">Explore Community →</span></div>
+        </a>
+        <a class="offering-card" href="solutions-academy.html" data-cms-link="content230">
+          <div class="offering-shot"><img src="assets/screens/card-academy.png" alt="Academy course cards and progress tracking" loading="lazy" data-cms-image="content231"></div>
+          <div class="offering-body"><h3 data-cms-text="content187">Academy</h3><p data-cms-text="content188">Build practical AI skills and confidence at your own pace.</p><span class="card-link" data-cms-text="content189">Explore Academy →</span></div>
+        </a>
+        <a class="offering-card" href="solutions-marketplace.html" id="marketplace" data-cms-link="content232">
+          <div class="offering-shot tiles" aria-label="A selection of Marketplace listings">
+            <span><span data-cms-text="content190">Microsoft 365</span><b data-cms-text="content191">$28/mo</b></span>
+            <span><span data-cms-text="content192">AI Studio</span><b data-cms-text="content193">$199/mo</b></span>
+            <span><span data-cms-text="content194">Xero Setup</span><b data-cms-text="content195">From $299</b></span>
+            <span><span data-cms-text="content196">MYOB Books</span><b data-cms-text="content197">$120/mo</b></span>
+            <span><span data-cms-text="content198">Cyber Security</span><b data-cms-text="content199">$249</b></span>
+          </div>
+          <div class="offering-body"><h3 data-cms-text="content200">Marketplace</h3><p data-cms-text="content201">Find products, services and technology solutions built for SMBs.</p><span class="card-link" data-cms-text="content202">Explore Marketplace →</span></div>
+        </a>
+        <a class="offering-card" href="solutions-legal.html" data-cms-link="content233">
+          <div class="offering-shot cloud" aria-label="Legal services mySMB Legal offers">
+            <span style="font-size:1.3em;font-weight:800" data-cms-text="content203">myLawyer</span>
+            <span style="font-size:1.55em;font-weight:900;color:var(--green-text)" data-cms-text="content204">Fixed Fees</span>
+            <span style="font-size:.78em;color:var(--muted)" data-cms-text="content205">Contracts</span>
+            <span style="font-size:1em;font-weight:700" data-cms-text="content206">myGC</span>
+            <span style="font-size:1.1em;font-weight:800" data-cms-text="content207">Cost Certainty</span>
+            <span style="font-size:.85em;font-weight:600" data-cms-text="content208">Disputes</span>
+            <span style="font-size:.78em;color:var(--muted)" data-cms-text="content209">Free Call</span>
+          </div>
+          <div class="offering-body"><h3 data-cms-text="content210">Legal</h3><p data-cms-text="content211">Plain-English legal support at predictable fixed-fee or subscription pricing.</p><span class="card-link" data-cms-text="content212">Explore Legal →</span></div>
+        </a>
+        <a class="offering-card" href="industries.html" data-cms-link="content234">
+          <div class="offering-shot more-shot" aria-label="More product and service categories">
+            <div class="more-scroll"><div class="more-scroll-inner">
+              <span data-cms-text="content213">Recruitment</span><span data-cms-text="content214">Marketing</span><span data-cms-text="content215">Accounting</span><span data-cms-text="content216">Outsourcing</span><span data-cms-text="content217">Not-for-Profit</span>
+              <span data-cms-text="content218">Recruitment</span><span data-cms-text="content219">Marketing</span><span data-cms-text="content220">Accounting</span><span data-cms-text="content221">Outsourcing</span><span data-cms-text="content222">Not-for-Profit</span>
+            </div></div>
+          </div>
+          <div class="offering-body"><h3 data-cms-text="content223">More Services</h3><p data-cms-text="content224">Specialist support across recruitment, marketing, accounting, outsourcing and more.</p><span class="card-link" data-cms-text="content225">Learn more →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="approach-section">
+      <div class="page-width approach-grid">
+        <header class="section-header compact reveal"><p class="label" data-cms-text="content235">A practical path forward</p><h2 data-cms-text="content236">Start where you are.</h2></header>
+        <ol>
+          <li><span data-cms-text="content237">01</span><div><h3 data-cms-text="content238">Set up</h3><p data-cms-text="content239">Connect the essentials and get a clearer view of the work.</p></div></li>
+          <li><span data-cms-text="content240">02</span><div><h3 data-cms-text="content241">Bring it together</h3><p data-cms-text="content242">Reduce the gaps between information, tasks and people.</p></div></li>
+          <li><span data-cms-text="content243">03</span><div><h3 data-cms-text="content244">Improve the flow</h3><p data-cms-text="content245">Use repeatable processes to reduce avoidable administration.</p></div></li>
+          <li><span data-cms-text="content246">04</span><div><h3 data-cms-text="content247">Apply AI</h3><p data-cms-text="content248">Use AI to support valuable, well-understood work.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="pricing-section page-width" id="pricing">
+      <header class="section-header compact reveal"><p class="label" data-cms-text="content249">Plans for every stage</p><h2 data-cms-text="content250">A plan for every size of business.</h2></header>
+      <div class="pricing-grid reveal-stagger">
+        <div class="pricing-card">
+          <h3 data-cms-text="content251">Sole Trader</h3>
+          <div class="price"><span data-cms-text="content252">$50</span><span data-cms-text="content253">/mo</span></div>
+          <p style="margin:0 0 8px;color:var(--muted)" data-cms-text="content254">For individual business owners</p>
+          <ul><li data-cms-text="content255">1 user</li><li data-cms-text="content256">Includes all key features</li><li data-cms-text="content257">Billed monthly</li></ul>
+          <a class="button button-dark button-small" href="https://marketplace.mysmb.com/products/?productnumber=SMB-MBR-SUB-ST01" target="_blank" rel="noopener" data-cms-link="content271" data-cms-text="content258">Get started</a>
+        </div>
+        <div class="pricing-card">
+          <h3 data-cms-text="content259">Employers</h3>
+          <div class="price"><span data-cms-text="content260">$100</span><span data-cms-text="content261">/mo</span></div>
+          <p style="margin:0 0 8px;color:var(--muted)" data-cms-text="content262">For businesses with 2 to 20 employees</p>
+          <ul><li data-cms-text="content263">Includes up to 3 users</li><li data-cms-text="content264">Add on $25/mo for additional users</li><li data-cms-text="content265">Includes all key features</li></ul>
+          <a class="button button-dark button-small" href="https://marketplace.mysmb.com/products/?productnumber=SMB-MBR-SUB-EMP01" target="_blank" rel="noopener" data-cms-link="content272" data-cms-text="content266">Get started</a>
+        </div>
+        <div class="pricing-card pricing-contact">
+          <h3 data-cms-text="content267">Larger Teams</h3>
+          <div class="price" data-cms-text="content268">Let's talk</div>
+          <p style="margin:0 0 8px;color:var(--muted)" data-cms-text="content269">For businesses with more than 20 employees</p>
+          <a class="button button-dark button-small" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener" data-cms-link="content273" data-cms-text="content270">Get started</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="start">
+      <div class="page-width cta-grid">
+        <div><p class="label" data-cms-text="content274">Your first four weeks</p><h2 data-cms-text="content275">Start with one part of the work.</h2></div>
+        <div><p data-cms-text="content276">Experience a clearer way to manage the work, with practical onboarding, learning and community support around you.</p><div class="hero-actions"><a class="button button-dark" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener" data-cms-link="content280" data-cms-text="content277">Create an account</a><a class="text-link" href="#pricing" data-cms-link="content281"><span data-cms-text="content278">View pricing</span> <span data-cms-text="content279">→</span></a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="newsletter-band">
+    <div class="page-width newsletter-inner">
+      <div><strong data-cms-text="content282">Join the mySMB.com Community</strong><p data-cms-text="content283">Connect with Australian SMB owners, operators and specialists, free to join.</p></div>
+      <a class="button button-dark button-small" href="https://myconnect.community/mysmb" target="_blank" rel="noopener" data-cms-link="content285" data-cms-text="content284">Join the Community</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="page-width footer-grid">
+      <div><a class="brand footer-brand" href="index.html"><img src="assets/logo-light.png" alt="mySMB.com"></a><p>Practical AI productivity for Australian small and medium businesses.</p></div>
+      <nav aria-label="Solutions navigation"><a href="solutions-workspace.html">Workspace</a><a href="solutions-community.html">Community</a><a href="solutions-academy.html">Academy</a><a href="solutions-marketplace.html">Marketplace</a><a href="solutions-legal.html">Legal</a></nav>
+      <nav aria-label="Company navigation"><a href="about-us.html">About Us</a><a href="partners.html">Partners</a><a href="testimonials.html">Testimonials</a><a href="#">Contact</a><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a></nav>
+    </div>
+    <div class="page-width footer-bottom"><span>© 2026 mySMB.com</span><nav class="footer-legal" aria-label="Legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms and Conditions</a><a href="licence-agreement.html">Licence Agreement</a></nav><div class="footer-social" aria-label="Social media"><a href="https://x.com/mySMBcom" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.5 7.43L22 22h-6.86l-5.37-6.4L3.7 22H1l7-8.01L2 2h6.98l4.86 5.8L18.24 2Zm-1.2 18h1.9L7.02 4H5l12.04 16Z"/></svg></a><a href="https://www.linkedin.com/company/mysmb-com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5ZM8.5 8.5h3.8v2h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.12V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8.5Z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61570477723649" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a><a href="https://www.instagram.com/mysmb.com_official/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.15S2.79 4.8 2.53 5.45c-.25.64-.42 1.37-.47 2.43C2.01 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.15 1.77s1.11.89 1.77 1.15c.64.25 1.37.42 2.43.47C8.94 21.99 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.15s.89-1.11 1.15-1.77c.25-.64.42-1.37.47-2.43.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43a4.9 4.9 0 0 0-1.15-1.77 4.9 4.9 0 0 0-1.77-1.15c-.64-.25-1.37-.42-2.43-.47C15.06 2.01 14.72 2 12 2Zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.85.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.13.35.3.87.34 1.85.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.34 1.85-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.35.13-.87.3-1.85.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.85-.34a3.1 3.1 0 0 1-1.15-.75 3.1 3.1 0 0 1-.75-1.15c-.13-.35-.3-.87-.34-1.85-.05-1.05-.06-1.37-.06-4.04s.01-2.99.06-4.04c.04-.98.21-1.5.34-1.85.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.35-.13.87-.3 1.85-.34C9.01 3.81 9.33 3.8 12 3.8Zm0 3.05a5.15 5.15 0 1 0 0 10.3 5.15 5.15 0 0 0 0-10.3Zm0 8.5a3.35 3.35 0 1 1 0-6.7 3.35 3.35 0 0 1 0 6.7Zm5.35-8.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg></a></div><a href="index.html#top">Back to top ↑</a></div>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    (function(){
+      var targets = document.querySelectorAll('.reveal, .reveal-stagger');
+      if (!targets.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        targets.forEach(function(el){ el.classList.add('visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      targets.forEach(function(el){ io.observe(el); });
+    })();
+
+    (function(){
+      var track = document.getElementById('cfTrack');
+      if (!track) return;
+      var prev = document.querySelector('.cf-prev');
+      var next = document.querySelector('.cf-next');
+      function step(){ var card = track.querySelector('div'); return card ? card.getBoundingClientRect().width + 22 : 320; }
+      function update(){
+        prev.disabled = track.scrollLeft <= 4;
+        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      }
+      prev.addEventListener('click', function(){ track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function(){ track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    (function(){
+      var track = document.getElementById('offeringsTrack');
+      if (!track) return;
+      var prev = document.querySelector('.of-prev');
+      var next = document.querySelector('.of-next');
+      function step(){ var card = track.querySelector('.offering-card'); return card ? card.getBoundingClientRect().width + 20 : 300; }
+      function update(){
+        prev.disabled = track.scrollLeft <= 4;
+        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      }
+      prev.addEventListener('click', function(){ track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function(){ track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    (function(){
+      // tools mySMB.com coexists with, real logos sourced from each company's own site
+      var tools = [
+        ['assets/coexist/google-calendar.png','Calendar'],['assets/coexist/charitabl.png','Charitabl'],
+        ['assets/coexist/chatgpt.svg','ChatGPT'],['assets/coexist/claude.png','Claude'],
+        ['assets/coexist/cliniko.png','Cliniko'],['assets/coexist/copilot.svg','Copilot'],
+        ['assets/coexist/dataverse.svg','Dataverse'],['assets/coexist/gemini.svg','Gemini'],
+        ['assets/coexist/github.svg','GitHub'],['assets/coexist/gmail.png','Gmail'],
+        ['assets/coexist/google.png','Google'],['assets/coexist/google-workspace.png','Google Workspace'],
+        ['assets/coexist/microsoft-365.png','Microsoft 365'],['assets/coexist/microsoft-teams.png','Microsoft Teams'],
+        ['assets/coexist/monday.png','monday.com'],['assets/coexist/myob.png','MYOB'],
+        ['assets/coexist/netsuite.png','NetSuite'],['assets/coexist/notion.png','Notion'],
+        ['assets/coexist/onedrive.svg','OneDrive'],['assets/coexist/outlook.svg','Outlook'],
+        ['assets/coexist/quickbooks.png','QuickBooks'],['assets/coexist/salesforce.png','Salesforce'],
+        ['assets/partners/surepact.svg','SurePact'],['assets/coexist/xero.svg','Xero']
+      ];
+      var row = document.getElementById('coexistRow');
+      if (row) {
+        var items = tools.map(function(t){
+          return '<div><div class="cx-badge"><img src="'+t[0]+'" alt="'+t[1]+'" loading="lazy"></div><span>'+t[1]+'</span></div>';
+        }).join('') + '<div class="cx-more"><div class="cx-badge plus">+</div><span>&amp; more</span></div>';
+        row.innerHTML = items;
+      }
+    })();
+
+    /* --- Recycled from the Jack portfolio build --- */
+    (function(){
+      // continuous logo marquee, built from real partner logos
+      var logos = [
+        ['assets/partners/microsoft.svg','Microsoft'],
+        ['assets/partners/ube-marketing.png','UBE Marketing','lg'],
+        ['assets/partners/smartcompany.svg','SmartCompany'],
+        ['assets/partners/business-chamber-qld.png','Business Chamber Queensland'],
+        ['assets/partners/kochies.png','Kochies Business Builders','lg'],
+        ['assets/partners/atms.svg','ATMS'],
+        ['assets/partners/hammerjack.svg','Hammerjack'],
+        ['assets/partners/icb.png','ICB'],
+        ['assets/partners/business-show-au.png','The Business Show Australia','lg'],
+        ['assets/partners/flying-solo.png','Flying Solo'],
+        ['assets/partners/tribal.png','Tribal'],
+        ['assets/partners/surepact.svg','Surepact'],
+        ['assets/partners/adaptovate.svg','Adaptovate'],
+        ['assets/partners/informotion.svg','Informotion']
+      ];
+      var row = document.getElementById('logoRow');
+      if (row) {
+        var doubled = logos.concat(logos);
+        row.innerHTML = doubled.map(function(l){ return '<img src="'+l[0]+'" alt="'+l[1]+'"'+(l[2]?' class="'+l[2]+'"':'')+' loading="lazy">'; }).join('');
+      }
+
+      // subtle magnetic pull on primary buttons
+      var strength = 8, padding = 18;
+      document.querySelectorAll('.magnet-btn').forEach(function(btn){
+        btn.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)';
+        btn.addEventListener('mousemove', function(e){
+          var r = btn.getBoundingClientRect();
+          var dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
+          if (Math.abs(dx) < r.width/2 + padding && Math.abs(dy) < r.height/2 + padding) {
+            btn.style.transition = 'transform .2s ease-out';
+            btn.style.transform = 'translate3d(' + dx/strength + 'px,' + dy/strength + 'px,0)';
+          }
+        }, { passive: true });
+        btn.addEventListener('mouseleave', function(){
+          btn.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)';
+          btn.style.transform = 'translate3d(0,0,0)';
+        });
+      });
+    })();
+    /* --- Heading excitement: split h2s into words that rise into place on scroll --- */
+    function wrapWords(el){
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      let n; while ((n = walker.nextNode())) nodes.push(n);
+      let i = 0;
+      nodes.forEach(function(node){
+        const parts = node.textContent.split(/(\s+)/);
+        const frag = document.createDocumentFragment();
+        parts.forEach(function(part){
+          if (part.trim() === '') { frag.appendChild(document.createTextNode(part)); return; }
+          const outer = document.createElement('span'); outer.className = 'wr-word';
+          const inner = document.createElement('span'); inner.className = 'wr-inner';
+          inner.textContent = part;
+          inner.style.transitionDelay = (i * 0.045) + 's';
+          i++;
+          outer.appendChild(inner);
+          frag.appendChild(outer);
+        });
+        node.parentNode.replaceChild(frag, node);
+      });
+    }
+    var headings = document.querySelectorAll('main h2');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target); } });
+      }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+      headings.forEach(function(h){
+        wrapWords(h);
+        h.classList.add('word-reveal');
+        io2.observe(h);
+      });
+    }
+  </script>
+  <style>
+    /* --- Click-to-zoom lightbox for screenshots/photos (skips logos, nav, avatars, icons) --- */
+    img.zoomable-trigger{cursor:zoom-in;transition:filter .18s}
+    img.zoomable-trigger:hover{filter:brightness(1.04)}
+    .zoom-lightbox{position:fixed;inset:0;background:rgba(10,14,18,.92);z-index:999;display:none;align-items:center;justify-content:center;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+    .zoom-lightbox.open{display:flex}
+    .zoom-lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;cursor:grab;transition:transform .25s cubic-bezier(.16,1,.3,1);touch-action:none;user-select:none;-webkit-user-drag:none;border-radius:4px}
+    .zoom-lightbox img.dragging{transition:none;cursor:grabbing}
+    .zoom-close{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px)}
+    .zoom-close:hover{background:rgba(255,255,255,.22)}
+    .zoom-hint{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.76rem;font-weight:500;letter-spacing:.01em;pointer-events:none;text-align:center;padding:0 16px}
+    @media(max-width:600px){.zoom-hint{font-size:.68rem}}
+  </style>
+  <script>
+  (function(){
+    var EXCLUDE = 'header, nav, footer, .brand, .logo-marquee-row, .cb-avatar, .ipe-logos, .partner-grid, .audience-nav, .site-nav, .skip-link, .zoom-lightbox';
+    function isAvatarish(img){
+      var cs = getComputedStyle(img), br = parseFloat(cs.borderRadius) || 0;
+      return br >= (img.clientWidth / 2) - 2 && img.clientWidth > 0;
+    }
+    function dist(a, b){ return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY); }
+    var overlay, img, closeBtn, scale = 1, tx = 0, ty = 0, dragging = false, startX = 0, startY = 0, lastDist = null;
+    function applyTransform(){ img.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')'; }
+    function reset(){ scale = 1; tx = 0; ty = 0; applyTransform(); img.classList.remove('dragging'); }
+    function close(){ overlay.classList.remove('open'); document.body.style.overflow = ''; reset(); }
+    function open(src, alt){
+      img.src = src; img.alt = alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      reset();
+    }
+    function initZoom(){
+      if (document.querySelector('.zoom-lightbox')) return;
+      overlay = document.createElement('div');
+      overlay.className = 'zoom-lightbox';
+      overlay.innerHTML = '<button type="button" class="zoom-close" aria-label="Close">&times;</button><img alt=""><div class="zoom-hint">Scroll or pinch to zoom &middot; drag to pan &middot; tap outside to close</div>';
+      document.body.appendChild(overlay);
+      img = overlay.querySelector('img');
+      closeBtn = overlay.querySelector('.zoom-close');
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+      img.addEventListener('wheel', function(e){
+        e.preventDefault();
+        scale = Math.min(4, Math.max(1, scale + (e.deltaY < 0 ? 0.15 : -0.15)));
+        if (scale === 1) { tx = 0; ty = 0; }
+        applyTransform();
+      }, { passive: false });
+      img.addEventListener('dblclick', function(){
+        scale = scale > 1 ? 1 : 2.2;
+        if (scale === 1) { tx = 0; ty = 0; }
+        applyTransform();
+      });
+      img.addEventListener('mousedown', function(e){
+        if (scale === 1) return;
+        dragging = true; img.classList.add('dragging');
+        startX = e.clientX - tx; startY = e.clientY - ty;
+      });
+      window.addEventListener('mousemove', function(e){
+        if (!dragging) return;
+        tx = e.clientX - startX; ty = e.clientY - startY;
+        applyTransform();
+      });
+      window.addEventListener('mouseup', function(){ dragging = false; img.classList.remove('dragging'); });
+      img.addEventListener('touchstart', function(e){
+        if (e.touches.length === 2) { lastDist = dist(e.touches[0], e.touches[1]); }
+        else if (e.touches.length === 1 && scale > 1) {
+          dragging = true; startX = e.touches[0].clientX - tx; startY = e.touches[0].clientY - ty;
+        }
+      }, { passive: true });
+      img.addEventListener('touchmove', function(e){
+        if (e.touches.length === 2 && lastDist) {
+          e.preventDefault();
+          var d = dist(e.touches[0], e.touches[1]);
+          scale = Math.min(4, Math.max(1, scale * (d / lastDist)));
+          lastDist = d;
+          if (scale === 1) { tx = 0; ty = 0; }
+          applyTransform();
+        } else if (e.touches.length === 1 && dragging) {
+          tx = e.touches[0].clientX - startX; ty = e.touches[0].clientY - startY;
+          applyTransform();
+        }
+      }, { passive: false });
+      img.addEventListener('touchend', function(){ dragging = false; lastDist = null; });
+      window._mysmbZoomOpen = open;
+    }
+    function shouldZoom(el){
+      if (el.closest(EXCLUDE)) return false;
+      if (el.naturalWidth && el.naturalWidth < 140) return false;
+      var rect = el.getBoundingClientRect();
+      if (rect.width < 90 || rect.height < 90) return false;
+      if (isAvatarish(el)) return false;
+      return true;
+    }
+    function attach(){
+      initZoom();
+      document.querySelectorAll('img').forEach(function(el){
+        if (el.dataset.zoomBound) return;
+        var bind = function(){
+          if (!shouldZoom(el)) return;
+          el.dataset.zoomBound = '1';
+          el.classList.add('zoomable-trigger');
+          el.addEventListener('click', function(){ window._mysmbZoomOpen(el.currentSrc || el.src, el.alt); });
+        };
+        if (el.complete) bind(); else el.addEventListener('load', bind, { once: true });
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', attach);
+    else attach();
+  })();
+  </script>
+  <script src="cms-config.js"></script>
+  <script src="cms.js" defer></script>
+</body>
+</html>

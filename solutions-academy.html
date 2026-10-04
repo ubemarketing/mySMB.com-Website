@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; } window.scrollTo(0, 0);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#34dfba">
+  <meta name="description" content="Academy: practical AI learning, training and resources to help you build skills and confidence at your own pace.">
+  <title>Academy: AI Learning and Skilling Hub | mySMB.com</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .course-cat{padding-block:56px;border-top:1px solid var(--line)}
+    .course-cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:26px;flex-wrap:wrap}
+    .course-cat-head h2{margin:0 0 6px;font-size:1.5rem}
+    .course-cat-head p{margin:0;color:var(--muted)}
+    .course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+    .course-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+    .course-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(20,30,40,.08);border-color:transparent}
+    .course-card .c-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .course-card .c-logo{width:30px;height:30px;border-radius:8px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:5px;flex:0 0 auto}
+    .course-card .c-logo img{width:100%;height:100%;object-fit:contain}
+    .course-card .c-tag{display:inline-flex;align-self:flex-start;font-size:.7rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--green-text);background:rgba(52,223,186,.12);padding:4px 10px;border-radius:999px}
+    .course-card h4{margin:0;font-size:1rem;line-height:1.35}
+    .course-card p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.4}
+    .course-card.c-more{align-items:flex-start;justify-content:center;border-style:solid;border-width:1.5px;border-color:var(--green);background:rgba(52,223,186,.1)}
+    .course-card.c-more:hover{background:rgba(52,223,186,.18)}
+    .course-card.c-more h4{color:var(--green-text)}
+    @media(max-width:600px){.course-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+  </style>
+</head>
+<body data-cms-page="page-solutions-academy">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="audience-nav" aria-label="Business type">
+    <div class="audience-nav-inner">
+      <a href="audience-sole-operators.html">Sole traders</a>
+      <a href="audience-small-business.html">Small businesses</a>
+      <a href="audience-medium-large-business.html">Medium and large businesses</a>
+      <a href="audience-accountants-bookkeepers.html">Accountants and bookkeepers</a>
+      <a href="audience-chambers-associations.html">Chambers &amp; Associations</a>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Others</button>
+        <div class="dropdown-menu">
+          <a href="industries.html#accounting">Accounting</a>
+          <a href="industries.html#legal">Legal</a>
+          <a href="industries.html#healthcare">Healthcare</a>
+          <a href="industries.html#allied-health">Allied Health</a>
+          <a href="industries.html#natural-health">Natural Health</a>
+          <a href="industries.html#mortgage-broking">Mortgage Broking</a>
+          <a href="industries.html#financial-advice">Financial Advice</a>
+          <a href="industries.html#real-estate">Real Estate</a>
+          <a href="industries.html#construction">Construction</a>
+          <a href="industries.html#insurance-broking">Insurance Broking</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="mySMB.com home"><img src="assets/logo-light.png" alt="mySMB.com"></a>
+    <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Features</button>
+        <div class="dropdown-menu">
+          <div class="has-submenu">
+            <a href="solutions-workspace.html">Workspace</a>
+            <div class="submenu">
+              <div class="submenu-item" tabindex="0"><span>myHub</span><p>Bring your inbox, tasks, schedule and business activity into one clear daily view.</p></div>
+              <div class="submenu-item" tabindex="0"><span>WorkQ</span><p>Turn workflows and actions into a queue you can work through with clarity.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Digital Twin</span><p>Enable AI to understand your context and work on your behalf.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Work Management</span><p>Plan, assign, and track work across individuals and teams.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Automations</span><p>Automate repetitive tasks and streamline business processes.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Templates</span><p>Standardise work with reusable document and workflow templates.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Support and Guidance</span><p>In-app assistance helps you get to productive results without a steep learning curve.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Integrations</span><p>Connect tools like Microsoft 365, MYOB and Xero to bring live data into your Workspace.</p></div>
+              <div class="submenu-item" tabindex="0"><span>CRM &amp; Opportunity Management</span><p>Manage relationships, opportunities, and business activities from a single platform.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Marketing &amp; Lead Capture</span><p>Capture leads, collect feedback, and grow engagement through forms and surveys.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Programs</span><p>Organise projects and initiatives under strategic programs.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Knowledge Base</span><p>Store, organise, and share information across your organisation.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Custom Records</span><p>Create and manage records tailored to your unique business processes.</p></div>
+              <div class="submenu-item" tabindex="0"><span>AI Agents</span><p>Delegate work to AI-powered agents that help get tasks done faster.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Microsoft Teams Integration</span><p>Connect conversations and collaboration directly with Microsoft Teams.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Collaboration Tools</span><p>Enable teams to communicate, coordinate, and work together more effectively.</p></div>
+            </div>
+          </div>
+          <div class="has-submenu">
+            <a href="solutions-community.html">Community</a>
+            <div class="submenu">
+              <div class="submenu-item" tabindex="0"><span>Always-On Support</span><p>Get ongoing access to expert guidance, answers, and practical support whenever you need it.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Community</span><p>Connect with like-minded business owners to share experiences, ask questions, and learn from real-world challenges.</p></div>
+              <div class="submenu-item" tabindex="0"><span>SMB Pulse</span><p>Stay informed with curated updates on AI, technology, business trends, and emerging opportunities.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Webinars &amp; Events</span><p>Join live and on-demand sessions to learn from experts and connect with peers.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Learning Resources</span><p>Access practical courses, playbooks, guides, and prompt libraries designed for immediate application.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Knowledge Hub</span><p>Explore a growing library of business insights, resources, and best practices.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Collaboration Network</span><p>Build valuable relationships and collaborate with business owners, partners, and industry experts.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Expert Insights</span><p>Learn from subject matter experts through curated content, discussions, and educational sessions.</p></div>
+              <div class="submenu-item" tabindex="0"><span>AI Learning</span><p>Develop AI knowledge and practical skills through real-world examples, training, and use cases.</p></div>
+              <div class="submenu-item" tabindex="0"><span>Business Growth Resources</span><p>Discover tools, strategies, and frameworks designed to help your business grow and operate more effectively.</p></div>
+            </div>
+          </div>
+          <a class="active" href="solutions-academy.html" aria-current="page">Academy</a>
+          <a href="solutions-marketplace.html">Marketplace</a>
+          <a href="solutions-legal.html">Legal</a>
+        </div>
+      </div>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Your Business</button>
+        <div class="dropdown-menu">
+          <div class="has-submenu">
+            <a href="audience-sole-operators.html">Sole traders</a>
+            <div class="submenu">
+              <a class="submenu-item" href="audience-sole-operators.html#tradies"><span>Tradies</span><p>Manage jobs, customers and paperwork from one place.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#professional-services"><span>Professional Services</span><p>Keep client work, documents and compliance organised.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#consultants"><span>Consultants</span><p>Stay on top of projects, deliverables and client relationships.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#freelancers"><span>Freelancers</span><p>Turn scattered client work into a repeatable workflow.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#accountants-bookkeepers-sole"><span>Accountants &amp; Bookkeepers</span><p>Manage client requests, deadlines and recurring work.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#health-wellness"><span>Health &amp; Wellness</span><p>Organise appointments, client notes and follow-ups.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#independent-educators"><span>Independent Educators</span><p>Track students, sessions and learning resources.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#creative-digital"><span>Creative &amp; Digital</span><p>Keep projects, deadlines and client feedback organised.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#property-real-estate"><span>Property &amp; Real Estate</span><p>Manage listings, inspections and client communications.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#coaches-mentors"><span>Coaches &amp; Mentors</span><p>Structure programs, clients and outcomes.</p></a>
+              <a class="submenu-item" href="audience-sole-operators.html#recruitment-hr"><span>Recruitment &amp; HR</span><p>Coordinate candidates, clients and hiring activities.</p></a>
+              <a class="submenu-item" href="https://myimpact.org/" target="_blank" rel="noopener"><span>Not-for-Profits</span><p>Coordinate programs, volunteers and community engagement.</p></a>
+            </div>
+          </div>
+          <a href="audience-small-business.html">Small businesses</a>
+          <a href="audience-medium-large-business.html">Medium and large businesses</a>
+          <a href="audience-accountants-bookkeepers.html">Accountants and bookkeepers</a>
+          <a href="audience-chambers-associations.html">Chambers &amp; Associations</a>
+          <div class="has-submenu">
+            <a href="industries.html">Others</a>
+            <div class="submenu">
+              <a class="submenu-item" href="industries.html#accounting"><span>Accounting</span><p>Manage client work, compliance deadlines and advisory services from one connected Workspace.</p></a>
+              <a class="submenu-item" href="industries.html#legal"><span>Legal</span><p>Keep matters, documents and client communication organised, with mySMB Legal support on hand.</p></a>
+              <a class="submenu-item" href="industries.html#healthcare"><span>Healthcare</span><p>Reduce admin around scheduling, records and compliance, so more time goes to patient care.</p></a>
+              <a class="submenu-item" href="industries.html#allied-health"><span>Allied Health</span><p>Bring client bookings, treatment notes and follow-ups together for solo and growing practices.</p></a>
+              <a class="submenu-item" href="industries.html#natural-health"><span>Natural Health</span><p>Practical tools for client management, education and community, built for natural health practices.</p></a>
+              <a class="submenu-item" href="industries.html#mortgage-broking"><span>Mortgage Broking</span><p>Track leads, applications and lender communication in one place, with AI keeping clients moving.</p></a>
+              <a class="submenu-item" href="industries.html#financial-advice"><span>Financial Advice</span><p>Manage client relationships and compliance-heavy workflows with a Workspace built to reduce admin.</p></a>
+              <a class="submenu-item" href="industries.html#real-estate"><span>Real Estate</span><p>Coordinate listings, client communication and transactions with a shared view of what's next.</p></a>
+              <a class="submenu-item" href="industries.html#construction"><span>Construction</span><p>Connect projects, subcontractors and clients, turning site communication into trackable work.</p></a>
+              <a class="submenu-item" href="industries.html#insurance-broking"><span>Insurance Broking</span><p>Manage client policies, renewals and claims support from one Workspace, backed by peers.</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">About Us</button>
+        <div class="dropdown-menu">
+          <a href="about-us.html">Who we are</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="partners.html">Partners</a>
+          <a href="blogs-news.html">Blogs &amp; News</a>
+          <a href="events-webinars.html">Events &amp; Webinars</a>
+        </div>
+      </div>
+      <a href="index.html#pricing">Pricing</a><a href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener">Sign In</a>
+    </nav>
+    <div class="header-actions"><a class="button button-dark button-small" href="https://workspace.myimpact.group/trial" target="_blank" rel="noopener">Get started</a></div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div style="display:flex;align-items:center;gap:60px;flex-wrap:wrap">
+        <div style="flex:1 1 480px;min-width:280px">
+          <h1 data-cms-text="content1">Academy</h1>
+          <p class="page-hero-lede"><span data-cms-text="content2">Your learning and skilling hub. 39+ free courses to build the skills and confidence to apply AI and improve how you work and run your business. Start with our featured course,</span> <strong data-cms-text="content3">Getting Started: A Practical Guide to AI for SMBs</strong><span data-cms-text="content4">, and discover how AI, especially Microsoft Copilot, can make a meaningful difference in your business.</span></p>
+          <div class="hero-actions">
+            <a class="button button-green" href="https://learn.mysmb.com/courses/getting-started-ai-for-smb-s-with-microsoft-copilot/" target="_blank" rel="noopener" data-cms-link="content8" data-cms-text="content5">Start this course</a>
+            <a class="text-link" href="https://learn.mysmb.com/" target="_blank" rel="noopener" style="color:#fff" data-cms-link="content9"><span data-cms-text="content6">Browse all courses</span> <span data-cms-text="content7">&rarr;</span></a>
+          </div>
+        </div>
+        <div style="flex:0 0 auto;width:min(400px,90vw)">
+          <img src="assets/screens/academy-hero-stack.png" alt="" style="width:100%;display:block" data-cms-image="content10">
+        </div>
+      </div>
+    </section>
+
+    <section class="page-width" style="padding-block:34px;border-bottom:1px solid var(--line)">
+      <p style="margin:0 0 20px;color:var(--muted);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase" data-cms-text="content11">Learn skills across the tools you use</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:36px">
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/mysmb-badge.png" alt="mySMB.com" style="height:34px;width:34px;border-radius:8px" data-cms-image="content12"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/microsoft-glyph.png" alt="Microsoft" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content13"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/copilot.svg" alt="Microsoft Copilot" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content14"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/microsoft-teams.png" alt="Microsoft Teams" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content15"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/google.png" alt="Google" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content16"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/chatgpt.svg" alt="OpenAI" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content17"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/claude.png" alt="Claude" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content18"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/linkedin.png" alt="LinkedIn" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content19"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/ibm.png" alt="IBM" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content20"></div>
+        <div style="height:34px;display:flex;align-items:center"><img src="assets/coexist/deeplearningai.png" alt="DeepLearning.AI" style="max-height:100%;max-width:110px;object-fit:contain" data-cms-image="content21"></div>
+      </div>
+    </section>
+
+    <section class="page-width" style="padding-block:60px">
+      <p class="label" style="margin-bottom:18px" data-cms-text="content22">What's inside</p>
+      <div class="curriculum-grid">
+        <div>
+          <p style="font-weight:800;margin-bottom:10px" data-cms-text="content23">Identifying areas of your business ripe for AI support</p>
+          <ul class="check-list" style="font-size:.9rem">
+            <li data-cms-text="content24">Identifying areas of business for AI support</li>
+            <li data-cms-text="content25">Activity: AI opportunity mapping worksheet</li>
+            <li data-cms-text="content26">Guide: your first 30 days with AI</li>
+            <li data-cms-text="content27">Structuring SharePoint folders for SMBs</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:800;margin-bottom:10px" data-cms-text="content28">How to evaluate AI tools and vendors</p>
+          <ul class="check-list" style="font-size:.9rem">
+            <li data-cms-text="content29">How to evaluate AI tools and vendors</li>
+            <li data-cms-text="content30">Activity: vendor scorecard</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:800;margin-bottom:10px" data-cms-text="content31">Designing simple, low-risk AI pilots</p>
+          <ul class="check-list" style="font-size:.9rem">
+            <li data-cms-text="content32">Designing simple, low-risk AI pilots</li>
+            <li data-cms-text="content33">Planning your project design</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:800;margin-bottom:10px" data-cms-text="content34">Check your understanding</p>
+          <ul class="check-list" style="font-size:.9rem">
+            <li data-cms-text="content35">Final assessment</li>
+            <li data-cms-text="content36">Summary and end of module</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-intro page-width" style="text-align:center">
+      <p class="label" style="justify-content:center;margin-inline:auto" data-cms-text="content37">About Academy</p>
+      <p style="margin-inline:auto" data-cms-text="content38">A learning platform designed to help professionals grow with confidence in the age of artificial intelligence. Whether you're a business owner, team leader or aspiring entrepreneur, Academy offers practical, accessible courses that make AI easy to understand and apply.</p>
+    </section>
+
+    <section class="course-cat page-width" style="border-top:0">
+      <div class="course-cat-head">
+        <div><h2 data-cms-text="content39">Getting started</h2><p data-cms-text="content40">The foundations, before you go further.</p></div>
+        <a class="text-link" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content60"><span data-cms-text="content41">Browse the full Academy</span> <span data-cms-text="content42">&rarr;</span></a>
+      </div>
+      <div class="course-grid reveal-stagger">
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-openlearning/" target="_blank" rel="noopener" data-cms-link="content61"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content62"></div><span class="c-tag" data-cms-text="content43">Free to learn</span></div><h4 data-cms-text="content44">Introduction to Academy</h4><p data-cms-text="content45">Get oriented before you dive into your first course.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-ai-concepts/" target="_blank" rel="noopener" data-cms-link="content63"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content64"></div><span class="c-tag" data-cms-text="content46">Free to learn</span></div><h4 data-cms-text="content47">Introduction to AI Concepts</h4><p data-cms-text="content48">The core ideas behind AI, explained in plain English.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-artificial-intelligence-for-smbs/" target="_blank" rel="noopener" data-cms-link="content65"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content66"></div><span class="c-tag" data-cms-text="content49">Free to learn</span></div><h4 data-cms-text="content50">Introduction to Artificial Intelligence for SMBs</h4><p data-cms-text="content51">Where AI fits into a small or medium business, practically.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/what-is-microsoft-365-/" target="_blank" rel="noopener" data-cms-link="content67"><div class="c-top"><div class="c-logo"><img src="assets/coexist/microsoft-glyph.png" alt="" data-cms-image="content68"></div><span class="c-tag" data-cms-text="content52">Free to learn</span></div><h4 data-cms-text="content53">What is Microsoft 365?</h4><p data-cms-text="content54">A grounding in the tools you're probably already paying for.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-workspace/" target="_blank" rel="noopener" data-cms-link="content69"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content70"></div><span class="c-tag" data-cms-text="content55">Free to learn</span></div><h4 data-cms-text="content56">Introduction to Workspace</h4><p data-cms-text="content57">Get moving in mySMB.com Workspace from day one.</p></a>
+        <a class="course-card c-more" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content71"><h4 data-cms-text="content58">More Getting Started courses</h4><p data-cms-text="content59">Browse the full Academy catalogue for more.</p></a>
+      </div>
+    </section>
+
+    <section class="course-cat page-width">
+      <div class="course-cat-head">
+        <div><h2 data-cms-text="content72">Microsoft 365 Copilot</h2><p data-cms-text="content73">Put Copilot to work across the apps you already use.</p></div>
+        <a class="text-link" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content102"><span data-cms-text="content74">Browse the full Academy</span> <span data-cms-text="content75">&rarr;</span></a>
+      </div>
+      <div class="course-grid reveal-stagger">
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-microsoft-365-copilot/" target="_blank" rel="noopener" data-cms-link="content103"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content104"></div><span class="c-tag" data-cms-text="content76">Free to learn</span></div><h4 data-cms-text="content77">Introduction to Microsoft 365 Copilot</h4><p data-cms-text="content78">Get started with Copilot across the Microsoft 365 apps.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/build-effective-presentations-with-ai/" target="_blank" rel="noopener" data-cms-link="content105"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content106"></div><span class="c-tag" data-cms-text="content79">Free to learn</span></div><h4 data-cms-text="content80">Copilot x PowerPoint</h4><p data-cms-text="content81">Build effective presentations with AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/draft-impactful-documents-using-ai/" target="_blank" rel="noopener" data-cms-link="content107"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content108"></div><span class="c-tag" data-cms-text="content82">Free to learn</span></div><h4 data-cms-text="content83">Copilot x Word</h4><p data-cms-text="content84">Draft impactful documents using AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/uncover-new-data-insights-with-ai/" target="_blank" rel="noopener" data-cms-link="content109"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content110"></div><span class="c-tag" data-cms-text="content85">Free to learn</span></div><h4 data-cms-text="content86">Copilot x Excel</h4><p data-cms-text="content87">Uncover new data insights with AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/make-your-meetings-more-productive-with-ai/" target="_blank" rel="noopener" data-cms-link="content111"><div class="c-top"><div class="c-logo"><img src="assets/coexist/microsoft-teams.png" alt="" data-cms-image="content112"></div><span class="c-tag" data-cms-text="content88">Free to learn</span></div><h4 data-cms-text="content89">Copilot x Teams</h4><p data-cms-text="content90">Make your meetings more productive with AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/from-inbox-to-impact-improve-your-email-workflows-with-ai/" target="_blank" rel="noopener" data-cms-link="content113"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content114"></div><span class="c-tag" data-cms-text="content91">Free to learn</span></div><h4 data-cms-text="content92">Copilot x Outlook</h4><p data-cms-text="content93">Improve your email workflows with AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/unlock-productivity-and-unleash-creativity-with-ai-powered-chat/" target="_blank" rel="noopener" data-cms-link="content115"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content116"></div><span class="c-tag" data-cms-text="content94">Free to learn</span></div><h4 data-cms-text="content95">Microsoft 365 Copilot Chat</h4><p data-cms-text="content96">Unlock productivity and unleash creativity with AI-powered chat.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/drive-adoption-of-microsoft-365-copilot/" target="_blank" rel="noopener" data-cms-link="content117"><div class="c-top"><div class="c-logo"><img src="assets/coexist/microsoft-glyph.png" alt="" data-cms-image="content118"></div><span class="c-tag" data-cms-text="content97">Free to learn</span></div><h4 data-cms-text="content98">Drive Adoption of Microsoft 365 Copilot</h4><p data-cms-text="content99">Help your whole team get value from Copilot, not just you.</p></a>
+        <a class="course-card c-more" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content119"><h4 data-cms-text="content100">More Copilot courses</h4><p data-cms-text="content101">Browse the full Academy catalogue for more.</p></a>
+      </div>
+    </section>
+
+    <section class="course-cat page-width">
+      <div class="course-cat-head">
+        <div><h2 data-cms-text="content120">Prompting &amp; AI skills</h2><p data-cms-text="content121">Get hands-on with prompts, agents and everyday AI tools.</p></div>
+        <a class="text-link" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content149"><span data-cms-text="content122">Browse the full Academy</span> <span data-cms-text="content123">&rarr;</span></a>
+      </div>
+      <div class="course-grid reveal-stagger">
+        <a class="course-card" href="https://learn.mysmb.com/courses/copilot-365-craft-effective-prompts/" target="_blank" rel="noopener" data-cms-link="content150"><div class="c-top"><div class="c-logo"><img src="assets/coexist/copilot.svg" alt="" data-cms-image="content151"></div><span class="c-tag" data-cms-text="content124">Free to learn</span></div><h4 data-cms-text="content125">Copilot 365: Craft Effective Prompts</h4><p data-cms-text="content126">The building blocks of a prompt that actually works.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-generative-ai-and-prompt/" target="_blank" rel="noopener" data-cms-link="content152"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content153"></div><span class="c-tag" data-cms-text="content127">Free to learn</span></div><h4 data-cms-text="content128">Introduction to Generative AI and Prompt Engineering</h4><p data-cms-text="content129">A broader grounding in generative AI and how to direct it.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/ai-tools-you-can-use-today/" target="_blank" rel="noopener" data-cms-link="content154"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content155"></div><span class="c-tag" data-cms-text="content130">Free to learn</span></div><h4 data-cms-text="content131">AI Tools You Can Use Today</h4><p data-cms-text="content132">Practical tools you can put to work this week.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-agents/" target="_blank" rel="noopener" data-cms-link="content156"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content157"></div><span class="c-tag" data-cms-text="content133">Free to learn</span></div><h4 data-cms-text="content134">Introduction to Developing AI Agents</h4><p data-cms-text="content135">What AI agents are and how they can take on real work.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/get-started-with-agents/" target="_blank" rel="noopener" data-cms-link="content158"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content159"></div><span class="c-tag" data-cms-text="content136">Free to learn</span></div><h4 data-cms-text="content137">Get Started with Agents</h4><p data-cms-text="content138">Build your first agent, step by step.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/effective-team-collaboration-with-ai/" target="_blank" rel="noopener" data-cms-link="content160"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content161"></div><span class="c-tag" data-cms-text="content139">Free to learn</span></div><h4 data-cms-text="content140">Effective Team Collaboration with AI</h4><p data-cms-text="content141">Bring your whole team along, not just the early adopters.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/simplified-cyber-security-for-australian-small-business/" target="_blank" rel="noopener" data-cms-link="content162"><div class="c-top"><div class="c-logo"><img src="assets/mysmb-badge.png" alt="" data-cms-image="content163"></div></div><h4 data-cms-text="content142">Simplified Cyber Security for Australian Small Business</h4><p data-cms-text="content143">The practical security basics every SMB should have covered.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-claude/" target="_blank" rel="noopener" data-cms-link="content164"><div class="c-top"><div class="c-logo"><img src="assets/coexist/claude.png" alt="" data-cms-image="content165"></div><span class="c-tag" data-cms-text="content144">Free to learn</span></div><h4 data-cms-text="content145">Introduction to Claude</h4><p data-cms-text="content146">Get started with Anthropic's Claude.</p></a>
+        <a class="course-card c-more" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content166"><h4 data-cms-text="content147">More AI skills courses</h4><p data-cms-text="content148">Browse the full Academy catalogue for more.</p></a>
+      </div>
+    </section>
+
+    <section class="course-cat page-width">
+      <div class="course-cat-head">
+        <div><h2 data-cms-text="content167">From our learning partners</h2><p data-cms-text="content168">Curated courses from Google, Microsoft, IBM, DeepLearning.AI and more.</p></div>
+        <a class="text-link" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content198"><span data-cms-text="content169">Browse the full Academy</span> <span data-cms-text="content170">&rarr;</span></a>
+      </div>
+      <div class="course-grid reveal-stagger">
+        <a class="course-card" href="https://learn.mysmb.com/courses/openai-academy/" target="_blank" rel="noopener" data-cms-link="content199"><div class="c-top"><div class="c-logo"><img src="assets/coexist/chatgpt.svg" alt="" data-cms-image="content200"></div></div><h4 data-cms-text="content171">OpenAI Academy</h4><p data-cms-text="content172">Learn directly from the team behind ChatGPT.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-generative-ai-google-skills/" target="_blank" rel="noopener" data-cms-link="content201"><div class="c-top"><div class="c-logo"><img src="assets/coexist/google.png" alt="" data-cms-image="content202"></div></div><h4 data-cms-text="content173">Introduction to Generative AI</h4><p data-cms-text="content174">Google Skills.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-large-language-models-google-skills/" target="_blank" rel="noopener" data-cms-link="content203"><div class="c-top"><div class="c-logo"><img src="assets/coexist/google.png" alt="" data-cms-image="content204"></div></div><h4 data-cms-text="content175">Introduction to Large Language Models</h4><p data-cms-text="content176">Google Skills.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/introduction-to-responsible-ai-google-skills/" target="_blank" rel="noopener" data-cms-link="content205"><div class="c-top"><div class="c-logo"><img src="assets/coexist/google.png" alt="" data-cms-image="content206"></div><span class="c-tag" data-cms-text="content177">Free to learn</span></div><h4 data-cms-text="content178">Introduction to Responsible AI</h4><p data-cms-text="content179">Google Skills.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/ai-for-everyone-deeplearning-ai/" target="_blank" rel="noopener" data-cms-link="content207"><div class="c-top"><div class="c-logo"><img src="assets/coexist/deeplearningai.png" alt="" data-cms-image="content208"></div></div><h4 data-cms-text="content180">AI for Everyone</h4><p data-cms-text="content181">DeepLearning.AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/generative-ai-for-everyone-deeplearning-ai/" target="_blank" rel="noopener" data-cms-link="content209"><div class="c-top"><div class="c-logo"><img src="assets/coexist/deeplearningai.png" alt="" data-cms-image="content210"></div></div><h4 data-cms-text="content182">Generative AI for Everyone</h4><p data-cms-text="content183">DeepLearning.AI.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/career-essentials-in-generative-ai-by-microsoft-and-linkedin/" target="_blank" rel="noopener" data-cms-link="content211"><div class="c-top"><div class="c-logo"><img src="assets/coexist/linkedin.png" alt="" data-cms-image="content212"></div><span class="c-tag" data-cms-text="content184">Free to learn</span></div><h4 data-cms-text="content185">Career Essentials in Generative AI</h4><p data-cms-text="content186">Microsoft and LinkedIn Learning.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/ibm-skillsbuild-learning-catalog/" target="_blank" rel="noopener" data-cms-link="content213"><div class="c-top"><div class="c-logo"><img src="assets/coexist/ibm.png" alt="" data-cms-image="content214"></div></div><h4 data-cms-text="content187">Artificial Intelligence Fundamentals</h4><p data-cms-text="content188">IBM SkillsBuild.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/elements-of-ai/" target="_blank" rel="noopener" data-cms-link="content215"><span class="c-tag" data-cms-text="content189">Free to learn</span><h4 data-cms-text="content190">Elements of AI</h4><p data-cms-text="content191">A free introduction to AI, no coding required.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/acsc-artificial-intelligence-for-small-business/" target="_blank" rel="noopener" data-cms-link="content216"><h4 data-cms-text="content192">AI for Small Business</h4><p data-cms-text="content193">Australian Signals Directorate&rsquo;s Cyber Security Centre.</p></a>
+        <a class="course-card" href="https://learn.mysmb.com/courses/national-ai-centre-tafe-nsw-ai-microskills-course-/" target="_blank" rel="noopener" data-cms-link="content217"><h4 data-cms-text="content194">AI Microskills</h4><p data-cms-text="content195">National AI Centre, via TAFE NSW.</p></a>
+        <a class="course-card c-more" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content218"><h4 data-cms-text="content196">More partner courses</h4><p data-cms-text="content197">Browse the full Academy catalogue for more.</p></a>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <div class="page-width">
+        <header class="section-header compact"><p class="label" data-cms-text="content219">More in Academy</p><h2 data-cms-text="content220">Learning that fits around real work.</h2></header>
+        <div class="capability-list capability-list-responsive">
+          <article><span data-cms-text="content221">01</span><h3 data-cms-text="content222">Playbooks</h3><p data-cms-text="content223">Step-by-step guides showing how to use AI in real business scenarios.</p></article>
+          <article><span data-cms-text="content224">02</span><h3 data-cms-text="content225">Flexible learning</h3><p data-cms-text="content226">Short, focused lessons designed to fit into your day, whenever you have time.</p></article>
+          <article><span data-cms-text="content227">03</span><h3 data-cms-text="content228">Prompt libraries</h3><p data-cms-text="content229">Ready-to-use prompts you can apply straight away across different business tasks.</p></article>
+          <article><span data-cms-text="content230">04</span><h3 data-cms-text="content231">Practical examples</h3><p data-cms-text="content232">Real use cases across marketing, operations, finance and everyday productivity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-width" style="padding-block:90px">
+      <header class="section-header compact"><p class="label" data-cms-text="content233">Benefits</p><h2 data-cms-text="content234">Build capability at your own pace.</h2></header>
+      <div class="capability-list capability-list-responsive">
+        <article><span data-cms-text="content235">01</span><h3 data-cms-text="content236">Learn at your own pace</h3><p data-cms-text="content237">Access courses and resources anytime so you can build skills around your own schedule.</p></article>
+        <article><span data-cms-text="content238">02</span><h3 data-cms-text="content239">Focus on practical skills</h3><p data-cms-text="content240">Learn how to apply AI in real business scenarios, not just theory.</p></article>
+        <article><span data-cms-text="content241">03</span><h3 data-cms-text="content242">Build confidence with AI</h3><p data-cms-text="content243">Understand how to use AI tools across marketing, operations and day-to-day work.</p></article>
+        <article><span data-cms-text="content244">04</span><h3 data-cms-text="content245">Turn learning into action</h3><p data-cms-text="content246">Move from reading to doing: create tasks, follow-ups or notes directly from what you learn.</p></article>
+        <article><span data-cms-text="content247">05</span><h3 data-cms-text="content248">Stay current</h3><p data-cms-text="content249">Keep up with new tools, trends and ways of working, without feeling overwhelmed.</p></article>
+        <article><span data-cms-text="content250">06</span><h3 data-cms-text="content251">Support long-term growth</h3><p data-cms-text="content252">Develop skills that help you adapt and improve as your business evolves.</p></article>
+      </div>
+    </section>
+
+    <section class="final-cta" id="start">
+      <div class="page-width cta-grid">
+        <div><p class="label" data-cms-text="content253">Start learning today</p><h2 data-cms-text="content254">Explore Academy.</h2></div>
+        <div><p data-cms-text="content255">Create your account and start building the knowledge and confidence to apply AI in your everyday work.</p><div class="hero-actions"><a class="button button-dark" href="https://learn.mysmb.com/" target="_blank" rel="noopener" data-cms-link="content257" data-cms-text="content256">Sign up now</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="newsletter-band">
+    <div class="page-width newsletter-inner">
+      <div><strong data-cms-text="content258">Join the mySMB.com Community</strong><p data-cms-text="content259">Connect with Australian SMB owners, operators and specialists, free to join.</p></div>
+      <a class="button button-dark button-small" href="https://myconnect.community/mysmb" target="_blank" rel="noopener" data-cms-link="content261" data-cms-text="content260">Join the Community</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="page-width footer-grid">
+      <div><a class="brand footer-brand" href="index.html"><img src="assets/logo-light.png" alt="mySMB.com"></a><p>Practical AI productivity for Australian small and medium businesses.</p></div>
+      <nav aria-label="Solutions navigation"><a href="solutions-workspace.html">Workspace</a><a href="solutions-community.html">Community</a><a href="solutions-academy.html">Academy</a><a href="solutions-marketplace.html">Marketplace</a><a href="solutions-legal.html">Legal</a></nav>
+      <nav aria-label="Company navigation"><a href="about-us.html">About Us</a><a href="partners.html">Partners</a><a href="testimonials.html">Testimonials</a><a href="#">Contact</a><a href="privacy-policy.html">Privacy</a><a href="terms-and-conditions.html">Terms</a></nav>
+    </div>
+    <div class="page-width footer-bottom"><span>© 2026 mySMB.com</span><nav class="footer-legal" aria-label="Legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms and Conditions</a><a href="licence-agreement.html">Licence Agreement</a></nav><div class="footer-social" aria-label="Social media"><a href="https://x.com/mySMBcom" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.5 7.43L22 22h-6.86l-5.37-6.4L3.7 22H1l7-8.01L2 2h6.98l4.86 5.8L18.24 2Zm-1.2 18h1.9L7.02 4H5l12.04 16Z"/></svg></a><a href="https://www.linkedin.com/company/mysmb-com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.9 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5ZM8.5 8.5h3.8v2h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.66 4.78 6.12V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8.5Z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61570477723649" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a><a href="https://www.instagram.com/mysmb.com_official/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c-2.72 0-3.06.01-4.12.06-1.06.05-1.79.22-2.43.47-.66.26-1.22.6-1.77 1.15S2.79 4.8 2.53 5.45c-.25.64-.42 1.37-.47 2.43C2.01 8.94 2 9.28 2 12s.01 3.06.06 4.12c.05 1.06.22 1.79.47 2.43.26.66.6 1.22 1.15 1.77s1.11.89 1.77 1.15c.64.25 1.37.42 2.43.47C8.94 21.99 9.28 22 12 22s3.06-.01 4.12-.06c1.06-.05 1.79-.22 2.43-.47.66-.26 1.22-.6 1.77-1.15s.89-1.11 1.15-1.77c.25-.64.42-1.37.47-2.43.05-1.06.06-1.4.06-4.12s-.01-3.06-.06-4.12c-.05-1.06-.22-1.79-.47-2.43a4.9 4.9 0 0 0-1.15-1.77 4.9 4.9 0 0 0-1.77-1.15c-.64-.25-1.37-.42-2.43-.47C15.06 2.01 14.72 2 12 2Zm0 1.8c2.67 0 2.99.01 4.04.06.98.04 1.5.21 1.85.34.47.18.8.4 1.15.75.35.35.57.68.75 1.15.13.35.3.87.34 1.85.05 1.05.06 1.37.06 4.04s-.01 2.99-.06 4.04c-.04.98-.21 1.5-.34 1.85-.18.47-.4.8-.75 1.15-.35.35-.68.57-1.15.75-.35.13-.87.3-1.85.34-1.05.05-1.37.06-4.04.06s-2.99-.01-4.04-.06c-.98-.04-1.5-.21-1.85-.34a3.1 3.1 0 0 1-1.15-.75 3.1 3.1 0 0 1-.75-1.15c-.13-.35-.3-.87-.34-1.85-.05-1.05-.06-1.37-.06-4.04s.01-2.99.06-4.04c.04-.98.21-1.5.34-1.85.18-.47.4-.8.75-1.15.35-.35.68-.57 1.15-.75.35-.13.87-.3 1.85-.34C9.01 3.81 9.33 3.8 12 3.8Zm0 3.05a5.15 5.15 0 1 0 0 10.3 5.15 5.15 0 0 0 0-10.3Zm0 8.5a3.35 3.35 0 1 1 0-6.7 3.35 3.35 0 0 1 0 6.7Zm5.35-8.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg></a></div><a href="index.html#top">Back to top ↑</a></div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="cms-config.js"></script>
+  <script src="cms.js" defer></script>
+</body>
+</html>
