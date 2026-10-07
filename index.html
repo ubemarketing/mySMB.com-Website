@@ -170,7 +170,8 @@
       .site-nav-cta{display:flex;justify-content:center;align-items:center;margin-top:14px;padding:13px 18px;width:100%;background:#fff;border:1px solid var(--line);color:var(--ink)!important;font-weight:800!important;text-decoration:none;border-radius:var(--radius-pill);text-align:center}
     }
     .label-quiet{margin-bottom:14px;font-size:.92rem;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--muted)}
-    .label-product{display:inline-block;margin-bottom:18px;padding:5px 14px;border:1px solid var(--line);border-radius:var(--radius-pill);font-size:.8rem;font-weight:700;letter-spacing:.02em;text-transform:none;color:var(--ink)}
+    .label-product{display:inline-block;margin-bottom:18px;padding:5px 14px;border:1px solid var(--line);border-radius:var(--radius-pill);font-size:1.08rem;line-height:1.5;font-weight:700;letter-spacing:.02em;text-transform:none;color:var(--ink);text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+    a.label-product:hover,a.label-product:focus-visible{border-color:var(--ink);background:rgba(255,255,255,.55);transform:translateY(-1px)}
     /* --- Coexist-with tools grid --- */
     .coexist-section{padding-block:90px;border-top:1px solid var(--line)}
     .coexist-section .section-header{max-width:640px}
@@ -232,6 +233,16 @@
     .cb6{top:50%;right:1%;animation-delay:1.7s}
     .cb8{bottom:2%;left:11%;animation-delay:.8s}
     .cb10{bottom:11%;right:9%;animation-delay:2.2s}
+    .workspace-media{position:relative}
+    .workspace-media .community-bubbles{z-index:2}
+    .cb-icon{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:2.5px solid var(--green);background:#eafaf6}
+    .cb-icon svg{width:22px;height:22px;stroke:#0a7a5f;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .cb-big .cb-icon{width:64px;height:64px;border-width:3px}
+    .cb-big .cb-icon svg{width:30px;height:30px}
+    .wb1{top:-2%;right:4%;animation-delay:.3s}
+    .wb2{top:40%;right:-1%;animation-delay:1.4s}
+    .wb3{bottom:3%;left:3%;animation-delay:.9s}
+    @media(max-width:1050px){.cb-icon{width:36px;height:36px;border-width:2px}.cb-icon svg{width:17px;height:17px}.cb-big .cb-icon{width:46px;height:46px}.cb-big .cb-icon svg{width:22px;height:22px}.wb2{right:0}}
     @keyframes cb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
     @media(prefers-reduced-motion:reduce){.cb{animation:none}}
     @media(max-width:1050px){
@@ -427,17 +438,36 @@
       </div>
     </section>
 
-    <section class="product-lead page-width" id="workspace">
-      <div class="product-window reveal">
-        <div class="window-label"><span data-cms-text="content23">Workspace</span><span data-cms-text="content24">Real product view</span></div>
-        <img src="assets/workspace-detail.png" alt="mySMB.com Workspace dashboard showing tasks, records and business activity" data-cms-image="content30">
+    <section class="workspace-section" id="workspace">
+    <div class="product-lead page-width">
+      <div class="workspace-media reveal">
+        <div class="product-window">
+          <div class="window-label"><span data-cms-text="content23">Workspace</span><span data-cms-text="content24">Real product view</span></div>
+          <img src="assets/workspace-detail.png" alt="mySMB.com Workspace dashboard showing tasks, records and business activity" data-cms-image="content30">
+        </div>
+        <div class="community-bubbles" aria-hidden="true">
+        <div class="cb wb1"><div class="cb-avatar"><span class="cb-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content300">BAS due 28 Oct</b><p data-cms-text="content301">Figures are ready</p></div></div>
+        <div class="cb wb2"><div class="cb-avatar"><span class="cb-icon"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content302">Invoice paid</b><p data-cms-text="content303">Wattle Bakery, A$286</p></div></div>
+        <div class="cb wb3"><div class="cb-avatar"><span class="cb-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/></svg></span><span class="cb-arrow"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></div><div><b data-cms-text="content304">3 tasks due today</b><p data-cms-text="content305">Next: Thursday install</p></div></div>
+        </div>
       </div>
       <div class="product-lead-copy">
+        <a class="label-product" href="solutions-workspace.html" data-cms-text="content39">Workspace</a>
         <p class="label" data-cms-text="content25">One connected business</p>
         <h2 data-cms-text="content26">Start the day knowing what needs attention.</h2>
         <p data-cms-text="content27">Workspace brings together your priorities, schedule, work queues and useful business information. See what is waiting, understand the next action and move directly into the work.</p>
-        <a class="text-link" href="#platform" data-cms-link="content31"><span data-cms-text="content28">Explore Workspace</span> <span data-cms-text="content29">→</span></a>
+        <a class="text-link" href="solutions-workspace.html" data-cms-link="content54"><span data-cms-text="content51">Explore Workspace</span> <span data-cms-text="content52">→</span></a>
       </div>
+    </div>
+
+    <div class="platform page-width" id="platform">
+      <header class="section-header reveal"><h2><span data-cms-text="content40">Use what helps.</span><br> <span data-cms-text="content41">Add more later.</span></h2></header>
+      <div class="capability-list reveal-stagger">
+        <article><span data-cms-text="content42">01</span><h3 data-cms-text="content43">See the work</h3><p data-cms-text="content44">Keep priorities, schedules, tasks and business activity visible in one place.</p></article>
+        <article><span data-cms-text="content45">02</span><h3 data-cms-text="content46">Move it forward</h3><p data-cms-text="content47">Turn useful information into clear actions and repeatable ways of working.</p></article>
+        <article><span data-cms-text="content48">03</span><h3 data-cms-text="content49">Build capability</h3><p data-cms-text="content50">Learn from practical resources, AI support and people with relevant experience.</p></article>
+      </div>
+    </div>
     </section>
 
     <section class="why-section">
@@ -455,21 +485,11 @@
       </div>
     </section>
 
-    <section class="platform page-width" id="platform">
-      <header class="section-header reveal"><p class="label-product" data-cms-text="content39">Workspace</p><h2><span data-cms-text="content40">Use what helps.</span><br> <span data-cms-text="content41">Add more later.</span></h2></header>
-      <div class="capability-list reveal-stagger">
-        <article><span data-cms-text="content42">01</span><h3 data-cms-text="content43">See the work</h3><p data-cms-text="content44">Keep priorities, schedules, tasks and business activity visible in one place.</p></article>
-        <article><span data-cms-text="content45">02</span><h3 data-cms-text="content46">Move it forward</h3><p data-cms-text="content47">Turn useful information into clear actions and repeatable ways of working.</p></article>
-        <article><span data-cms-text="content48">03</span><h3 data-cms-text="content49">Build capability</h3><p data-cms-text="content50">Learn from practical resources, AI support and people with relevant experience.</p></article>
-      </div>
-      <img class="wide-product reveal" src="assets/workspace-overview.png" alt="Workspace and Community screens connected in mySMB.com" data-cms-image="content53">
-      <a class="text-link" style="margin-top:28px" href="solutions-workspace.html" data-cms-link="content54"><span data-cms-text="content51">Explore Workspace</span> <span data-cms-text="content52">→</span></a>
-    </section>
 
     <section class="community-section" id="community">
       <div class="page-width community-grid">
         <div class="community-copy">
-          <p class="label-product" data-cms-text="content55">Community</p><h2 data-cms-text="content56">Your SMB Community for Practical Knowledge, Connection and Growth.</h2>
+          <a class="label-product" href="solutions-community.html" data-cms-text="content55">Community</a><h2 data-cms-text="content56">Your SMB Community for Practical Knowledge, Connection and Growth.</h2>
           <p data-cms-text="content57">Join a community of Australian business owners, operators and experts sharing practical advice, real-world experiences and proven AI-powered business strategies.</p>
           <a class="button button-white" href="https://myconnect.community/mysmb" target="_blank" rel="noopener" data-cms-link="content113" data-cms-text="content58">Join the community for free</a>
         </div>
@@ -511,7 +531,7 @@
     <section class="learn-section page-width" id="academy" style="display:block;padding-block:125px">
       <div class="learn-copy" style="display:flex;align-items:flex-end;justify-content:space-between;gap:6vw;margin-bottom:44px;flex-wrap:wrap">
         <div style="max-width:640px">
-          <p class="label-product" data-cms-text="content121">Academy</p><h2 data-cms-text="content122">Your AI journey, one course at a time.</h2>
+          <a class="label-product" href="solutions-academy.html" data-cms-text="content121">Academy</a><h2 data-cms-text="content122">Your AI journey, one course at a time.</h2>
           <p data-cms-text="content123">Practical courses built for Australian SMBs, not enterprise teams. Start wherever you are and build the confidence to put AI to work in your day-to-day, improving how productively you and your team run the business.</p>
         </div>
         <div style="max-width:360px;flex:0 0 auto">
