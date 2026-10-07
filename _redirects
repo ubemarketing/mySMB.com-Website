@@ -1,1 +1,7 @@
 /pages/:slug /page.html 200
+
+# mysmb.legal -> Legal page (needs mysmb.legal added as a domain alias in Netlify + DNS)
+https://mysmb.legal/*       https://mysmb.com/solutions-legal  301!
+https://www.mysmb.legal/*   https://mysmb.com/solutions-legal  301!
+http://mysmb.legal/*        https://mysmb.com/solutions-legal  301!
+http://www.mysmb.legal/*    https://mysmb.com/solutions-legal  301!
