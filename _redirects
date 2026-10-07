@@ -1,1 +1,21 @@
+# Keep the original public Legal URLs when deploying this folder to Netlify.
+# mysmb.legal and www.mysmb.legal must be domain aliases on this site.
+https://mysmb.legal/*       https://mysmb.com/legal  301!
+https://www.mysmb.legal/*   https://mysmb.com/legal  301!
+http://mysmb.legal/*        https://mysmb.com/legal  301!
+http://www.mysmb.legal/*    https://mysmb.com/legal  301!
+
+# Serve the migrated pages at the established addresses without changing the browser URL.
+/legal                         /solutions-legal.html              200!
+/legalservices-termsofengagement /legal-terms-of-engagement.html    200!
+
+# Redirect newer filenames and trailing-slash variants to the established addresses.
+/solutions-legal.html           /legal                              301!
+/solutions-legal                /legal                              301!
+/legal/                         /legal                              301!
+/legal-terms-of-engagement.html  /legalservices-termsofengagement    301!
+/legal-terms-of-engagement       /legalservices-termsofengagement    301!
+/legalservices-termsofengagement/ /legalservices-termsofengagement   301!
+
+# Preserve the live custom-page route.
 /pages/:slug /page.html 200
