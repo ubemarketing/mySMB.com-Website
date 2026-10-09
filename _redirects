@@ -17,5 +17,9 @@ http://www.mysmb.legal/*    https://mysmb.com/legal  301!
 /legal-terms-of-engagement       /legalservices-termsofengagement    301!
 /legalservices-termsofengagement/ /legalservices-termsofengagement   301!
 
+# Keep the community landing-page link working.
+/join-the-community  https://myconnect.community/mysmb  301!
+/join-the-community/ https://myconnect.community/mysmb  301!
+
 # Preserve the live custom-page route.
 /pages/:slug /page.html 200
