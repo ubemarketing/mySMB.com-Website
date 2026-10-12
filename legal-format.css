@@ -11,6 +11,7 @@
 .legal-source li p{margin:0;line-height:inherit}
 .legal-source .clause-indent-1{margin-left:var(--clause-indent)}
 .legal-source .clause-indent-2{margin-left:calc(2 * var(--clause-indent))}
+.legal-source .clause-indent-3{margin-left:calc(3 * var(--clause-indent))}
 .legal-source .labelled-clause{display:grid;grid-template-columns:2em minmax(0,1fr);column-gap:.25em}
 .legal-source .legal-version{border-top:1px solid var(--line,#ddd);padding-top:24px;margin:36px 0 0;font-weight:600;color:var(--ink)}
 body[data-cms-page="page-terms-and-conditions"] .page-hero h1,body[data-cms-page="page-privacy-policy"] .page-hero h1{overflow-wrap:anywhere}
