@@ -57,7 +57,7 @@ const websiteSettings=defineType({name:'websiteSettings',title:'Website settings
 const fixedTypes=new Set(['websitePage','websiteSettings','legalDocument']);
 export default defineConfig({name:'mysmb',title:'mySMB.com Website',projectId:'h7kdscx8',dataset:'production',plugins:[structureTool({defaultDocumentNode:(S,{schemaType})=>schemaType==='legalDocument'?S.document().views([S.view.form(),S.view.component(LegalPreview).title('Preview')]):S.document().views([S.view.form()]),structure:S=>S.list().title('mySMB.com').items([
   S.listItem().title('Website pages').child(S.list().title('Website pages').items(pages.map(p=>S.listItem().title(p.title).child(S.document().schemaType('websitePage').documentId(p.id))))),
-  S.listItem().title('Legal documents').child(S.list().title('Legal documents').items(legalPages.map(p=>S.listItem().title(p.title).child(S.document().schemaType('legalDocument').documentId(p.id))))),
+  S.listItem().title('Legal documents').child(S.list().title('Legal documents').items(legalPages.map(p=>S.listItem().title(p.title).child(S.document().schemaType('legalDocument').documentId(p.id).views([S.view.form(),S.view.component(LegalPreview).title('Preview')]))))),
   S.documentTypeListItem('post').title('Blogs & news').child(S.documentList().title('Blogs & news').filter('_type == "post" && migrationRetired != true')),
   S.documentTypeListItem('event').title('Events & webinars').child(S.documentList().title('Events & webinars').filter('_type == "event" && migrationRetired != true')),
   S.documentTypeListItem('customPage').title('Create pages').child(S.documentList().title('Create pages').filter('_type == "customPage" && migrationRetired != true')),

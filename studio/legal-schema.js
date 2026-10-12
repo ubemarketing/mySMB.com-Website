@@ -1,8 +1,8 @@
 import {defineType,defineField} from 'sanity';
 export const legalPages = [
   {id:'legal-terms-and-conditions',title:'Terms and Conditions',pageId:'page-terms-and-conditions'},
-  {id:'legal-privacy-policy',title:'Privacy Policy',pageId:'page-privacy-policy'},
-  {id:'legal-terms-of-engagement',title:'Terms of Engagement',pageId:'page-legal-terms-of-engagement'}
+  {id:'legal-privacy-policy',title:'Website & Customer Privacy Policy',pageId:'page-privacy-policy'},
+  {id:'legal-terms-of-engagement',title:'Costs Agreement & Terms of Engagement',pageId:'page-legal-terms-of-engagement'}
 ];
 export const legalContentBlock = defineType({name:'legalContentBlock',title:'Document paragraph or clause',type:'object',initialValue:{kind:'paragraph',indent:1},fields:[
   defineField({name:'kind',title:'Format',type:'string',options:{list:[{title:'Section heading',value:'heading'},{title:'Subsection heading',value:'subheading'},{title:'Paragraph',value:'paragraph'},{title:'Bullet point',value:'bullet'},{title:'Numbered list item',value:'numbered'},{title:'Lettered clause',value:'clause'}]},validation:R=>R.required()}),
@@ -15,5 +15,6 @@ export const legalDocument = defineType({name:'legalDocument',title:'Legal docum
   defineField({name:'title',title:'Document',type:'string',readOnly:true,validation:R=>R.required()}),
   defineField({name:'pageId',type:'string',readOnly:true,hidden:true,validation:R=>R.required()}),
   defineField({name:'content',title:'Document content',type:'array',of:[{type:'legalContentBlock'}],validation:R=>R.required().min(1),description:'Headings, paragraphs and clauses keep their structure. Reorder or add an item when necessary; preserve clause labels and cross-references.'}),
+  defineField({name:'versionBold',title:'Bold version and date lines',type:'boolean',initialValue:false}),
   defineField({name:'versionLines',title:'Version and effective date',type:'array',of:[{type:'string'}],validation:R=>R.required().min(1).max(3),description:'These lines appear at the bottom of the document. Do not change the date unless a new version has been approved.'})
 ],preview:{select:{title:'title',subtitle:'versionLines.0'}}});
