@@ -1,0 +1,17 @@
+{
+  "name": "mysmb-website-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev --host 127.0.0.1 --port 3333",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "import:legal": "sanity datasets import legal-documents.ndjson production --missing"
+  },
+  "dependencies": {
+    "sanity": "6.17.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "styled-components": "^6.1.19"
+  }
+}
