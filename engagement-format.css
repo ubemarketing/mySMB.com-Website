@@ -3,3 +3,5 @@
 .legal-source.legal-terms-copy .clause-indent-3{margin-left:calc(3 * var(--clause-indent))}
 body[data-cms-page="page-legal-terms-of-engagement"] .page-hero h1{overflow-wrap:anywhere}
 @media(max-width:600px){body[data-cms-page="page-legal-terms-of-engagement"] .page-hero h1{font-size:clamp(2.2rem,9vw,3rem);line-height:1.12}}
+
+.legal-source.legal-terms-copy h2,.legal-source.legal-terms-copy h3{scroll-margin-top:96px}
