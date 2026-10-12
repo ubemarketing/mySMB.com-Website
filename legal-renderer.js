@@ -36,8 +36,7 @@ export function legalDocumentToHTML(doc) {
     const indent = block.indent ? `clause-indent-${block.indent}` : '';
     if (block.kind === 'bullet' || block.kind === 'numbered') {
       const tag = block.kind === 'bullet' ? 'ul' : 'ol';
-      const key = `${tag}:${block.listGroup || ''}`;
-      if (list?.key !== key) { endList(); html += `<${tag}>`; list = {tag,key}; }
+      if (!list || list.tag !== tag || block.startNewList) { endList(); html += `<${tag}>`; list = {tag}; }
       html += `<li${indent ? ` class="${indent}"` : ''}><p>${copy}</p></li>`;
       continue;
     }
