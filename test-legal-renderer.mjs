@@ -4,7 +4,6 @@ import {legalDocumentToHTML,legalLink} from './legal-renderer.js';
 const docs=fs.readFileSync('studio/legal-documents.ndjson','utf8').trim().split('\n').map(JSON.parse);
 for(const doc of docs){
  const html=legalDocumentToHTML(doc);
- fs.writeFileSync(`../rendered-${doc._id}.html`,html);
  assert.equal((html.match(/<h2\b/g)||[]).length,doc.content.filter(x=>x.kind==='heading').length);
  assert.equal((html.match(/<li\b/g)||[]).length,doc.content.filter(x=>['bullet','numbered'].includes(x.kind)).length);
  assert.equal((html.match(/class="clause-label"/g)||[]).length,doc.content.filter(x=>x.kind==='clause').length);

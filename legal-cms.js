@@ -6,7 +6,7 @@ const container = document.querySelector('.legal-source');
 const config = window.MYSMB_CMS;
 if (ids[pageId] && container && config?.projectId) {
   const endpoint = new URL(`https://${config.projectId}.api.sanity.io/v${config.apiVersion}/data/query/${config.dataset}`);
-  endpoint.searchParams.set('query','*[_type == "legalDocument" && _id == $id && pageId == $pageId][0]{content,versionLines}');
+  endpoint.searchParams.set('query','*[_type == "legalDocument" && _id == $id && pageId == $pageId][0]{content,versionLines,versionBold}');
   endpoint.searchParams.set('$id',JSON.stringify(ids[pageId]));
   endpoint.searchParams.set('$pageId',JSON.stringify(pageId));
   endpoint.searchParams.set('perspective','published');
