@@ -1,0 +1,5 @@
+/* Extend the shared legal layout for the original three-level clause hierarchy. */
+.legal-source.legal-terms-copy p{margin-top:0}
+.legal-source.legal-terms-copy .clause-indent-3{margin-left:calc(3 * var(--clause-indent))}
+body[data-cms-page="page-legal-terms-of-engagement"] .page-hero h1{overflow-wrap:anywhere}
+@media(max-width:600px){body[data-cms-page="page-legal-terms-of-engagement"] .page-hero h1{font-size:clamp(2.2rem,9vw,3rem);line-height:1.12}}
